@@ -11,7 +11,7 @@
             outlined
             stack-label
             bottom-slots
-            label="Data/Hora Agendamento"
+            label="Fecha/Hora"
             mode="date"
             color="primary"
             format24h
@@ -25,7 +25,7 @@
             outlined
             stack-label
             bottom-slots
-            label="Data/Hora Agendamento"
+            label="Fecha/Hora"
             mode="date"
             color="primary"
             format24h
@@ -55,7 +55,7 @@
             rounded
             color="primary"
             icon="refresh"
-            label="Atualizar"
+            label="Actualizar"
             @click="getDashData"
           />
         </div>
@@ -74,7 +74,7 @@
             >
               <q-card-section class="text-center ">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_total_atendimentos }} </p>
-                Total Atendimentos
+                Total Atenciones
               </q-card-section>
             </q-card>
           </div>
@@ -87,7 +87,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_ativa }} </p>
-                Ativo
+                Demanda
               </q-card-section>
             </q-card>
           </div>
@@ -100,7 +100,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_receptiva }} </p>
-                Receptivo
+                Recibido
               </q-card-section>
             </q-card>
           </div>
@@ -113,7 +113,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.new_contacts }} </p>
-                Novos Contatos
+                Nuevos Contactos
               </q-card-section>
             </q-card>
           </div>
@@ -125,7 +125,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h5 text-bold text-center"> {{ cTmaFormat }} </p>
-                Tempo Médio Atendimento (TMA)
+                Tiempo Medio Atención (TMA)
               </q-card-section>
             </q-card>
           </div>
@@ -137,7 +137,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h5 text-bold text-center"> {{ cTmeFormat }} </p>
-                Tempo Médio 1º Resposta
+                Tiempo Medio 1º Respuesta
               </q-card-section>
             </q-card>
           </div>
@@ -215,7 +215,7 @@
         >
           <template v-slot:body-cell-name="props">
             <q-td :props="props">
-              <div class="row col text-bold"> {{ props.row.name || 'Não informado' }} </div>
+              <div class="row col text-bold"> {{ props.row.name || 'sin informacion' }} </div>
               <div class="row col text-caption">{{ props.row.email }} </div>
             </q-td>
           </template>
@@ -240,6 +240,7 @@ import {
   GetDashTicketsPerUsersDetail
 } from 'src/service/estatisticas'
 import { subDays, format, formatDuration, differenceInDays } from 'date-fns'
+import { es } from 'date-fns/locale'
 import ApexChart from 'vue-apexcharts'
 
 export default {
@@ -252,8 +253,8 @@ export default {
         width: this.$q.screen.width
       },
       params: {
-        startDate: format(subDays(new Date(), 6), 'yyyy-MM-dd'),
-        endDate: format(new Date(), 'yyyy-MM-dd'),
+        startDate: format(subDays(new Date(), 6), "yyyy-MM-dd'T'HH:mm:ss", { locale: es }),
+        endDate: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss", { locale: es }),
         queuesIds: []
       },
       paginationTableUser: {
@@ -291,10 +292,10 @@ export default {
           position: 'bottom'
         },
         title: {
-          text: 'Atendimento por canal'
+          text: 'Atenciones por canal'
         },
         noData: {
-          text: 'Sem dados aqui!',
+          text: 'Sin datos aqui!',
           align: 'center',
           verticalAlign: 'middle',
           offsetX: 0,
@@ -369,10 +370,10 @@ export default {
           position: 'bottom'
         },
         title: {
-          text: 'Atendimento por fila'
+          text: 'Atenciones por fila'
         },
         noData: {
-          text: 'Sem dados aqui!',
+          text: 'Sin datos aqui!',
           align: 'center',
           verticalAlign: 'middle',
           offsetX: 0,
@@ -457,7 +458,7 @@ export default {
           enabled: true
         },
         title: {
-          text: 'Evolução por canal',
+          text: 'Evolución por canal',
           align: 'left'
         },
         stroke: {
@@ -480,7 +481,7 @@ export default {
           tickPlacement: 'on'
           // labels: {
           //   formatter: function (value, timestamp, opts) {
-          //     return format(new Date(timestamp), 'dd/MM')
+          //     return format(new Date(timestamp), 'dd/MM', { locale: es })
           //     // return opts.dateFormatter().format('dd MMM')
           //   }
           // }
@@ -489,13 +490,13 @@ export default {
           // datetimeFormatter: {
           //   // year: 'yyyy',
           //   month: 'MM',
-          //   day: 'DD'
+          //   day: 'dd'
           //   // hour: 'HH:mm',
           // }
         },
         yaxis: {
           title: {
-            text: 'Atendimentos',
+            text: 'Atenciones',
             style: {
               color: '#FFF'
             }
@@ -560,7 +561,7 @@ export default {
           }
         },
         title: {
-          text: 'Evolução atendimentos',
+          text: 'Evolución de atenciones',
           align: 'left'
         },
         dataLabels: {
@@ -572,7 +573,7 @@ export default {
         },
         yaxis: {
           title: {
-            text: 'Atendimentos'
+            text: 'Atenciones'
           }
         },
         tooltip: {
@@ -606,17 +607,17 @@ export default {
           align: 'left',
           style: 'width: 300px;',
           format: (v, r) => {
-            return v ? `${r.name} | ${r.email}` : 'Não informado'
+            return v ? `${r.name} | ${r.email}` : 'sin informacion'
           }
         },
         {
           name: 'qtd_pendentes',
-          label: 'Pendentes',
+          label: 'Pendientes',
           field: 'qtd_pendentes'
         },
         {
           name: 'qtd_em_atendimento',
-          label: 'Atendendo',
+          label: 'Atendiendo',
           field: 'qtd_em_atendimento'
         },
         {
@@ -665,11 +666,11 @@ export default {
   computed: {
     cTmaFormat () {
       const tma = this.ticketsAndTimes.tma || {}
-      return formatDuration(tma) || ''
+      return formatDuration(tma, { locale: es }) || ''
     },
     cTmeFormat () {
       const tme = this.ticketsAndTimes.tme || {}
-      return formatDuration(tme) || ''
+      return formatDuration(tme, { locale: es }) || ''
     }
   },
   methods: {
@@ -766,7 +767,7 @@ export default {
         .then(res => {
           this.ticketsEvolutionByPeriod = res.data
           const series = [{
-            name: 'Atendimentos',
+            name: 'Atenciones',
             type: 'column',
             data: []
           }, {
