@@ -6,7 +6,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git@github.com:ldurans/izing.io.git"
+    "url": "git@github.com:JuanjoG92/izing.io.git"
   },
   "scripts": {
     "release": "semantic-release --no-ci",
