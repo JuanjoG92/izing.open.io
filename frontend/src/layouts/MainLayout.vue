@@ -78,7 +78,7 @@
                     @click="() => $router.push({ name: 'atendimento' })"
                     style="cursor: pointer;"
                   >
-                    Clientes pendentes na fila
+                    Clientes pendientes en fila
                   </q-item-section>
                 </q-item>
                 <q-item
@@ -108,7 +108,7 @@
                 </q-item>
               </q-list>
             </q-menu>
-            <q-tooltip>Notificações</q-tooltip>
+            <q-tooltip>Notificaciones</q-tooltip>
           </q-btn>
           <q-avatar
             :color="usuario.status === 'offline' ? 'negative' : 'positive'"
@@ -133,7 +133,7 @@
             </q-avatar>
             <q-menu>
               <q-list style="min-width: 100px">
-                <q-item-label header> Olá! <b> {{ username }} </b> </q-item-label>
+                <q-item-label header> Hola! <b> {{ username }} </b> </q-item-label>
 
                 <cStatusUsuario
                   @update:usuario="atualizarUsuario"
@@ -151,7 +151,7 @@
                   v-close-popup
                   @click="efetuarLogout"
                 >
-                  <q-item-section>Sair</q-item-section>
+                  <q-item-section>Salir</q-item-section>
                 </q-item>
                 <q-separator />
                 <q-item>
@@ -280,14 +280,14 @@ const objMenu = [
   },
 
   {
-    title: 'Atendimentos',
-    caption: 'Lista de atendimentos',
+    title: 'Atenciones',
+    caption: 'Lista de atenciones',
     icon: 'mdi-forum-outline',
     routeName: 'atendimento'
   },
   {
-    title: 'Contatos',
-    caption: 'Lista de contatos',
+    title: 'Contactos',
+    caption: 'Lista de contactos',
     icon: 'mdi-card-account-mail',
     routeName: 'contatos'
   }
@@ -295,20 +295,20 @@ const objMenu = [
 
 const objMenuAdmin = [
   {
-    title: 'Canais',
-    caption: 'Canais de Comunicação',
+    title: 'Conexiones',
+    caption: 'Canales de Comunicación',
     icon: 'mdi-cellphone-wireless',
     routeName: 'sessoes'
   },
   {
-    title: 'Painel Atendimentos',
-    caption: 'Visão geral dos atendimentos',
+    title: 'Panel Atenciones',
+    caption: 'Visón general de atenciones',
     icon: 'mdi-view-dashboard-variant',
     routeName: 'painel-atendimentos'
   },
   {
-    title: 'Relatórios',
-    caption: 'Relatórios gerais',
+    title: 'Informes',
+    caption: 'Informes generales',
     icon: 'mdi-file-chart',
     routeName: 'relatorios'
   },
@@ -320,49 +320,49 @@ const objMenuAdmin = [
   },
   {
     title: 'Filas',
-    caption: 'Cadastro de Filas',
+    caption: 'Registro de Filas',
     icon: 'mdi-arrow-decision-outline',
     routeName: 'filas'
   },
   {
-    title: 'Mensagens Rápidas',
-    caption: 'Mensagens pré-definidas',
+    title: 'Respuestas Rápidas',
+    caption: 'Mensajes pré-definidos',
     icon: 'mdi-reply-all-outline',
     routeName: 'mensagens-rapidas'
   },
   {
     title: 'Chatbot',
-    caption: 'Robô de atendimento',
+    caption: 'Robot de atención',
     icon: 'mdi-robot',
     routeName: 'chat-flow'
   },
   {
     title: 'Etiquetas',
-    caption: 'Cadastro de etiquetas',
+    caption: 'Registro de etiquetas',
     icon: 'mdi-tag-text',
     routeName: 'etiquetas'
   },
   {
-    title: 'Horário de Atendimento',
-    caption: 'Horário de funcionamento',
+    title: 'Horário de Atencición',
+    caption: 'Horário de funcionamiento',
     icon: 'mdi-calendar-clock',
     routeName: 'horarioAtendimento'
   },
   {
-    title: 'Configurações',
-    caption: 'Configurações gerais',
+    title: 'Configuraciones',
+    caption: 'Configuraciones generales',
     icon: 'mdi-cog',
     routeName: 'configuracoes'
   },
   {
-    title: 'Campanha',
-    caption: 'Campanhas de envio',
+    title: 'Campaña',
+    caption: 'Campañas de envio',
     icon: 'mdi-message-bookmark-outline',
     routeName: 'campanhas'
   },
   {
     title: 'API',
-    caption: 'Integração sistemas externos',
+    caption: 'Integrción con sistemas externos',
     icon: 'mdi-call-split',
     routeName: 'api-service'
   }
@@ -382,8 +382,8 @@ const superMenu = [
     routeName: 'usuariossuper'
   },
   {
-    title: 'Canais',
-    caption: 'Canais de Comunicação',
+    title: 'Canales',
+    caption: 'Canales de Comunicación',
     icon: 'mdi-cellphone-wireless',
     routeName: 'sessaosuper'
   }
@@ -497,7 +497,7 @@ export default {
 
         this.$router.go({ name: 'login', replace: true })
       } catch (error) {
-        this.$notificarErro('Não foi possível realizar logout', error)
+        this.$notificarErro('No se puede cerrar sesión', error)
       }
     },
     async listarConfiguracoes () {
@@ -570,14 +570,14 @@ export default {
     abrirAtendimentoExistente (contato, ticket) {
       this.$q.dialog({
         title: 'Atenção!!',
-        message: `${contato} possui um atendimento em curso (Atendimento: ${ticket.id}). Deseja abrir o atendimento?`,
+        message: `${contato} posee una atención en curso (Atendimento: ${ticket.id}). Desea abrir atención?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -587,7 +587,7 @@ export default {
           this.abrirChatContato(ticket)
         } catch (error) {
           this.$notificarErro(
-            'Não foi possível atualizar o token',
+            'No se puede actualizar el token',
             error
           )
         }
