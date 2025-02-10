@@ -9,7 +9,7 @@
       style="width: 500px"
       class="q-pa-lg"
     >
-      <div class="text-h6">{{ etiquetaEdicao.id ? 'Editar': 'Criar' }} Etiqueta</div>
+      <div class="text-h6">{{ etiquetaEdicao.id ? 'Editar': 'Crear' }} Etiqueta</div>
       <q-card-section>
         <q-input
           class="row col"
@@ -17,7 +17,7 @@
           dense
           outlined
           v-model="etiqueta.tag"
-          label="Nome da Etiqueta"
+          label="Nombre de Etiqueta"
         />
         <q-input
           rounded
@@ -55,7 +55,7 @@
         </q-input>
         <q-checkbox
           v-model="etiqueta.isActive"
-          label="Ativo"
+          label="Activo"
         />
       </q-card-section>
       <q-card-actions
@@ -71,7 +71,7 @@
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           color="positive"
           @click="handleEtiqueta"
         />
@@ -153,7 +153,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: 'Etiqueta criada!',
+            message: 'Etiqueta creada!',
             actions: [{
               icon: 'close',
               round: true,
@@ -165,7 +165,7 @@ export default {
         this.fecharModal()
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro ao criar a etiqueta', error)
+        this.$notificarErro('Se produjo un error al crear la etiqueta', error)
       }
     }
   }
