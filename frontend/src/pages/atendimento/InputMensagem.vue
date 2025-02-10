@@ -30,7 +30,7 @@
             <q-item>
               <q-item-section>
                 <q-item-label class="text-negative text-bold">Ops... Nada por aqui!</q-item-label>
-                <q-item-label caption>Cadastre suas mensagens na administração de sistema.</q-item-label>
+                <q-item-label caption>Registra tus mensajes en la administración del sistema.</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
@@ -80,7 +80,7 @@
             outlined
             stack-label
             bottom-slots
-            label="Data/Hora Agendamento"
+            label="Data/Hora Agendamiento"
             mode="datetime"
             color="primary"
             v-model="scheduleDate"
@@ -100,7 +100,7 @@
             :color="$q.dark.isActive ? 'white' : ''"
           >
             <q-tooltip content-class="text-bold">
-              Enviar arquivo
+              Enviar archivo
             </q-tooltip>
           </q-btn>
           <q-btn
@@ -154,7 +154,7 @@
             type="toggle"
           >
             <q-tooltip>
-              {{ sign ? 'Desativar' : 'Ativar' }} Assinatura
+              {{ sign ? 'Desactivar' : 'Activar' }} Firma
             </q-tooltip>
           </q-toggle>
           <q-input
@@ -169,7 +169,7 @@
             class="col-grow q-mx-xs text-grey-10 inputEnvioMensagem"
             bg-color="grey-2"
             color="grey-7"
-            placeholder="Digita sua mensagem"
+            placeholder="Escribe tu mensaje"
             input-style="max-height: 30vh"
             autogrow
             rounded
@@ -226,7 +226,7 @@
                 :color="$q.dark.isActive ? 'white' : ''"
               >
                 <q-tooltip content-class=" text-bold">
-                  Enviar arquivo
+                  Enviar archivo
                 </q-tooltip>
               </q-btn>
               <q-btn
@@ -242,7 +242,7 @@
               </q-btn>
             </template>
           </q-input>
-          <!-- tamanho maximo por arquivo de 10mb -->
+          <!-- tamaño máximo por archivo 10mb -->
           <q-file
             :loading="loading"
             :disable="cDisableActions"
@@ -387,7 +387,7 @@
           class="text-bold"
           color="positive"
           icon="mdi-send-circle"
-          label="Iniciar o atendimento"
+          label="Iniciar atención"
           @click="iniciarAtendimento(ticketFocado)"
         />
 
@@ -480,7 +480,7 @@ export default {
         this.arquivos = [e.clipboardData.files[0]]
         this.abrirModalPreviewImagem = true
         this.urlMediaPreview = {
-          title: `Enviar imagem para ${this.ticketFocado?.contact?.name}`,
+          title: `Enviar imagen para ${this.ticketFocado?.contact?.name}`,
           src: this.openFilePreview(e)
         }
         this.$refs.inputEnvioMensagem.focus()
@@ -582,7 +582,7 @@ export default {
     },
     prepararUploadMedia () {
       if (!this.arquivos.length) {
-        throw new Error('Não existem arquivos para envio')
+        throw new Error('No hay archivos para enviar')
       }
       const formData = new FormData()
       formData.append('fromMe', true)
@@ -599,7 +599,7 @@ export default {
     },
     prepararMensagemTexto () {
       if (this.textChat.trim() === '') {
-        throw new Error('Mensagem Inexistente')
+        throw new Error('Mensaje Inexistente')
       }
 
       if (this.textChat.trim() && this.textChat.trim().startsWith('/')) {
@@ -610,8 +610,8 @@ export default {
           this.textChat = mensagemRapida.message
         } else {
           const error = this.cMensagensRapidas.length > 1
-            ? 'Várias mensagens rápidas encontradas. Selecione uma ou digite uma chave única da mensagem.'
-            : '/ indica que você deseja enviar uma mensagem rápida, mas nenhuma foi localizada. Cadastre ou apague a / e digite sua mensagem.'
+            ? 'Se encontraron varias respuestas rápidas. Seleccione una o ingrese una clave única del mensaje.'
+            : '/ Indica que desea enviar un mensaje rápido, pero no se encontró ninguno. Registrate o borra el / y escribe tu mensaje.'
           this.$notificarErro(error)
           this.loading = false
           throw new Error(error)
@@ -639,7 +639,7 @@ export default {
     },
     async enviarMensagem () {
       if (this.isScheduleDate && !this.scheduleDate) {
-        this.$notificarErro('Para agendar uma mensagem, informe o campo Data/Hora Agendamento.')
+        this.$notificarErro('Para programar un mensaje, ingrese el campo Fecha/Hora de programación.')
         return
       }
       this.loading = true
@@ -709,7 +709,7 @@ export default {
         }, 800)
       } catch (error) {
         this.loading = false
-        this.$notificarErro('Ocorreu um erro!', error)
+        this.$notificarErro('Ocorrio un erro!', error)
       }
       this.loading = false
     },
@@ -734,14 +734,14 @@ export default {
       if (this.ticketFocado.channel === 'hub_instagram') {
         message = `Ops... Ocorreu um erro! <br>
     <ul>
-    <li>Cada arquivo deve ter no máximo 8MB.</li>
-    <li>Apenas arquivos nos formatos .jpeg, .png, .ico, .bmp, .webp e .* são aceitos.</li>
+    <li>Cada archivo debe tener un máximo de 8 MB..</li>
+    <li>Sólo se aceptan archivos en formatos .jpeg, .png, .ico, .bmp, .webp .*.</li>
     </ul>`
       } else {
-        message = `Ops... Ocorreu um erro! <br>
+        message = `Ops... Ocorrio un error! <br>
     <ul>
-    <li>Cada arquivo deve ter no máximo 10MB.</li>
-    <li>Em caso de múltiplos arquivos, o tamanho total (soma de todos) deve ser de até 30MB.</li>
+    <li>Cada archivo debe tener un máximo de 10 MB..</li>
+    <li>En caso de varios archivos, el tamaño total (suma de todos) debe ser de hasta 30 MB.</li>
     </ul>`
       }
       this.$q.notify({

@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-dialog
     persistent
     :value="modalFilaUsuario"
@@ -11,7 +11,7 @@
         <div
           style="font-size: 1em"
           class="text-caption text-bold row col q-px-sm q-pt-sm"
-        >Nome: {{ usuarioSelecionado.name }}</div>
+        >Nombre: {{ usuarioSelecionado.name }}</div>
         <div
           style="font-size: 1em"
           class="text-caption text-bold row col q-px-sm"

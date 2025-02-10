@@ -192,14 +192,14 @@
                           />
                         </q-item-section>
                         <q-item-section>
-                          <q-item-label>Resolvidos</q-item-label>
+                          <q-item-label>Resueltos</q-item-label>
                         </q-item-section>
                       </q-item>
                     </q-list>
                     <q-separator class="q-mb-md" />
                     <q-toggle
                       v-model="pesquisaTickets.withUnreadMessages"
-                      label="Solo tickets con mensajes no leídos"
+                      label="Somente Tickets com mensagens não lidas"
                       @input="debounce(BuscarTicketFiltro(), 700)"
                     />
                     <q-toggle
@@ -225,7 +225,7 @@
               </div>
             </q-menu>
             <q-tooltip content-class="bg-padrao text-grey-9 text-bold">
-              Filtro Avançado
+              Filtro Avanzado
             </q-tooltip>
           </q-btn>
           <q-input
@@ -1053,7 +1053,7 @@ export default {
         this.$router.go({ name: 'login', replace: true })
       } catch (error) {
         this.$notificarErro(
-          'No se puede cerrar sesión',
+          'Não foi possível realizar logout',
           error
         )
       }
