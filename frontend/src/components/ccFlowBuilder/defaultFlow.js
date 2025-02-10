@@ -1,5 +1,5 @@
 const data = {
-  name: 'Fluxo Inicial',
+  name: 'Flujo Inicial',
   nodeList: [
     {
       id: 'start',
@@ -18,7 +18,7 @@ const data = {
     },
     {
       id: 'configurations',
-      name: 'Configurações',
+      name: 'Configuraciones',
       type: 'configurations',
       left: '340px',
       top: '100px',
@@ -46,7 +46,7 @@ const data = {
     },
     {
       id: 'nodeC',
-      name: 'Boas vindas!',
+      name: 'Bienvenida!',
       type: 'node',
       left: '26px',
       top: '301px',
