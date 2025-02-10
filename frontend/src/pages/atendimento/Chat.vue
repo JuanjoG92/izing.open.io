@@ -177,7 +177,7 @@
                   clearable
                   option-label="name"
                   option-value="id"
-                  label="Localize e selecione o contato"
+                  label="Localize y selecione el contacto"
                   hint="Introduzca al menos dos letras para encontrar el contacto. Es posible seleccionar solo 1 contacto!">
           <template v-slot:option="scope">
             <q-item v-bind="scope.itemProps"
