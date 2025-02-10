@@ -11,7 +11,7 @@
             outlined
             stack-label
             bottom-slots
-            label="Fecha/Hora"
+            label="Desde Fecha"
             mode="date"
             color="primary"
             format24h
@@ -25,7 +25,7 @@
             outlined
             stack-label
             bottom-slots
-            label="Fecha/Hora"
+            label="Hasta Fecha"
             mode="date"
             color="primary"
             format24h
@@ -203,7 +203,7 @@
     <q-card class="q-my-md q-pa-sm">
       <q-card-section class="q-pa-md">
         <q-table
-          title="Performance Usuários"
+          title="Performance Usuarios"
           :data="ticketsPerUsersDetail"
           :columns="TicketsPerUsersDetailColumn"
           row-key="email"
@@ -602,7 +602,7 @@ export default {
       TicketsPerUsersDetailColumn: [
         {
           name: 'name',
-          label: 'Usuário',
+          label: 'Usuario',
           field: 'name',
           align: 'left',
           style: 'width: 300px;',
@@ -632,12 +632,12 @@ export default {
         },
         {
           name: 'tme',
-          label: 'T.M.E',
+          label: 'Tiempo Medio de Espera',
           field: 'tme',
           align: 'center',
           headerStyle: 'text-align: center !important',
           format: v => {
-            return formatDuration(v) || ''
+            return formatDuration(v, { locale: es }) || ''
           }
         },
         {
@@ -647,7 +647,7 @@ export default {
           align: 'center',
           headerStyle: 'text-align: center !important',
           format: v => {
-            return formatDuration(v) || ''
+            return formatDuration(v, { locale: es }) || ''
           }
         }
       ]
