@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <div class="row col full-width q-pa-sm">
       <q-card
