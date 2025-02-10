@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-dialog
     :value="modalWhatsapp"
     @hide="fecharModal"
@@ -16,7 +16,7 @@
             class="q-mr-md"
             :name="whatsapp.type ? `img:${whatsapp.type}-logo.png` : 'mdi-alert'"
           /> {{ whatsapp.id ? 'Editar' :
-              'Adicionar'
+              'Agregar'
             }}
           Canal
         </div>
@@ -40,7 +40,7 @@
             <c-input
               outlined
               rounded
-              label="Nome"
+              label="Nombre"
               dense
               v-model="whatsapp.name"
               :validator="$v.whatsapp.name"
@@ -148,13 +148,13 @@
 
         <div class="row q-my-md" v-if="!whatsapp?.type?.includes('hub')">
           <div class="col-12 relative-position">
-            <label class="text-caption">Mensagem Despedida:
+            <label class="text-caption">Mensaje de despedida:
             </label>
             <textarea
               ref="inputFarewellMessage"
               style="min-height: 15vh; max-height: 15vh;"
               class="q-pa-sm rounded-all bg-white full-width"
-              placeholder="Digite a mensagem"
+              placeholder="Introduce el mensaje"
               autogrow
               dense
               outlined
@@ -201,7 +201,7 @@
                   name="mdi-variable"
                 />
                 <q-tooltip>
-                  Variáveis
+                  Variables
                 </q-tooltip>
                 <q-menu touch-position>
                   <q-list
@@ -230,13 +230,13 @@
       >
         <q-btn
           rounded
-          label="Sair"
+          label="Salir"
           class="q-px-md q-mr-lg"
           color="negative"
           v-close-popup
         />
         <q-btn
-          label="Salvar"
+          label="Guardar"
           color="positive"
           rounded
           class="q-px-md"
@@ -295,8 +295,8 @@ export default {
         // { label: 'Instagram', value: 'instagram' }
       ],
       variaveis: [
-        { label: 'Nome', value: '{{name}}' },
-        { label: 'Saudação', value: '{{greeting}}' },
+        { label: 'Nombre', value: '{{name}}' },
+        { label: 'Saludo', value: '{{greeting}}' },
         { label: 'Protocolo', value: '{{protocol}}' }
       ]
     }
@@ -356,7 +356,7 @@ export default {
     },
     copy (text) {
       copyToClipboard(text)
-        .then(this.$notificarSucesso('URL de integração copiada!'))
+        .then(this.$notificarSucesso('URL de integración copiada!'))
         .catch()
     },
 
@@ -403,7 +403,7 @@ export default {
             type: 'warning',
             progress: true,
             position: 'top',
-            message: 'Ops! Verifique os erros...',
+            message: 'Ops! Verifique los errores...',
             actions: [{
               icon: 'close',
               round: true,
@@ -446,7 +446,7 @@ export default {
               type: 'error',
               progress: true,
               position: 'top',
-              message: 'Ops! Verifique os erros... O nome da conexão não pode existir na plataforma, é um identificador único.',
+              message: '¡Ups! Verificar errores... El nombre de la conexión no puede existir en la plataforma, es un identificador único.',
               actions: [{
                 icon: 'close',
                 round: true,
@@ -461,7 +461,7 @@ export default {
             type: 'warning',
             progress: true,
             position: 'top',
-            message: 'Ops! Verifique os erros...',
+            message: '¡Ups! Comprobar errores...',
             actions: [{
               icon: 'close',
               round: true,
@@ -472,7 +472,7 @@ export default {
         if (!this.selectedHubOption) {
           return this.$q.notify({
             type: 'warning',
-            message: 'Por favor, selecione um Hub antes de continuar.',
+            message: 'Por favor, selecione un Hub antes de continuar.',
             position: 'top',
             actions: [{ icon: 'close', round: true, color: 'white' }]
           })
@@ -497,16 +497,16 @@ export default {
           console.log(response)
           this.$q.notify({
             type: 'positive',
-            message: 'Hub adicionado com sucesso!',
+            message: 'Hub agregado con exito!',
             position: 'top'
           })
           this.$emit('recarregar-lista')
           this.fecharModal()
         } catch (error) {
-          console.error('Erro ao adicionar o Hub:', error)
+          console.error('Error al agregar Hub:', error)
           this.$q.notify({
             type: 'negative',
-            message: 'Erro ao adicionar o Hub. Por favor, tente novamente.',
+            message: 'Error al agregar Hub. Por favor, inténtalo de nuevo.',
             position: 'top'
           })
         }
