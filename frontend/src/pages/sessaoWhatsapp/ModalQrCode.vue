@@ -1,11 +1,11 @@
-<template>
+﻿<template>
   <q-dialog :value="abrirModalQR"
     @hide="fecharModalQrModal"
     persistent>
     <q-card style="bg-white">
       <q-card-section>
         <div class="text-h6 text-primary">
-          Leia o QrCode para iniciar a sessão
+          Escanee el código QR para iniciar la sesión
           <q-btn round
             class="q-ml-md"
             color="negative"
@@ -20,17 +20,17 @@
           :size="300"
           level="H" />
         <span v-else>
-          Aguardando o Qr Code
+          Aguardando Qr Code
         </span>
       </q-card-section>
       <q-card-section>
-        <div class="row">Caso tenha problema com a leitura, solicite um novo Qr Code </div>
+        <div class="row">Si tiene algún problema para leerlo, solicite un nuevo código QR. </div>
         <div class="row col-12 justify-center">
           <q-btn color="primary"
             glossy
             ripple
             outline
-            label="Novo QR Code"
+            label="Nuevo QR Code"
             @click="solicitarQrCode"
             icon="watch_later" />
         </div>
