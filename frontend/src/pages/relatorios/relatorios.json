@@ -11,12 +11,12 @@
     },
     {
       "name": "contatos-por-estado",
-      "titulo": "Contatos por Estado",
+      "titulo": "Contactos por Provincia",
       "objetivo": "Apresenta os contatos separados por estado (considera o DDD)."
     },
     {
       "name": "estatisticas-atendimentos-usuarios",
-      "titulo": "Resumo Atendimentos Usuários",
+      "titulo": "Resumen de Atenciones por Usurios",
       "objetivo": "Apresenta o resumo dos atendimentos por usuários."
     },
     {
