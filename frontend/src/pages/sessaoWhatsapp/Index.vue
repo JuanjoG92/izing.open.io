@@ -6,13 +6,13 @@
         class="full-width"
       >
         <q-card-section class="text-h6 text-bold">
-          Canais
+          Conexiones
           <div class="absolute-right q-pa-md">
             <q-btn
               rounded
               color="black"
               icon="mdi-plus"
-              label="Adicionar"
+              label="Agregar"
               @click="modalWhatsapp = true"
             />
           </div>
@@ -37,7 +37,7 @@
               </q-avatar>
             </q-item-section>
             <q-item-section>
-              <q-item-label class="text-h6 text-bold">Nome: {{ item.name }}</q-item-label>
+              <q-item-label class="text-h6 text-bold">Nombre: {{ item.name }}</q-item-label>
               <q-item-label class="text-h6 text-caption">
                 {{ item.type }}
               </q-item-label>
@@ -59,7 +59,7 @@
             <template v-if="item.type === 'messenger'">
               <div class="text-body2 text-bold q-mt-sm">
                 <span> Página: </span>
-                {{ item.fbObject && item.fbObject.name || 'Nenhuma página configurada.' }}
+                {{ item.fbObject && item.fbObject.name || 'No hay ninguna página configurada.' }}
               </div>
             </template>
           </q-card-section>
@@ -154,7 +154,7 @@
               class="absolute-bottom-right"
             >
               <q-tooltip>
-                Deletar conexáo
+                Borrar conexión
               </q-tooltip>
             </q-btn>
           </q-card-actions>
@@ -218,7 +218,7 @@ export default {
       columns: [
         {
           name: 'name',
-          label: 'Nome',
+          label: 'Nombre',
           field: 'name',
           align: 'left'
         },
@@ -242,20 +242,20 @@ export default {
         },
         {
           name: 'updatedAt',
-          label: 'Última Atualização',
+          label: 'Última actualización',
           field: 'updatedAt',
           align: 'center',
           format: d => this.formatarData(d, 'dd/MM/yyyy HH:mm')
         },
         {
           name: 'isDefault',
-          label: 'Padrão',
+          label: 'Principal',
           field: 'isDefault',
           align: 'center'
         },
         {
           name: 'acoes',
-          label: 'Ações',
+          label: 'Acciones',
           field: 'acoes',
           align: 'center'
         }
@@ -291,14 +291,14 @@ export default {
     },
     async handleDisconectWhatsSession (whatsAppId) {
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente desconectar? ',
+        title: '¡¡Atención!! ¿Estás seguro que deseas desconectarte? ',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -325,7 +325,7 @@ export default {
     },
     async handleRequestNewQrCode (channel, origem) {
       if (channel.type === 'telegram' && !channel.tokenTelegram) {
-        this.$notificarErro('Necessário informar o token para Telegram')
+        this.$notificarErro('Es necesario informar el token para Telegram')
       }
       this.loading = true
       try {
@@ -344,15 +344,15 @@ export default {
     },
     async deleteWhatsapp (whatsapp) {
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente deletar? ',
-        message: 'Não é uma boa ideia apagar se já tiver gerado atendimentos para esse whatsapp.',
+        title: '¡¡Atención!! ¿Realmente quieres eliminarlo?? ',
+        message: 'No es buena idea eliminar si ya has generado atenciones para ese WhatsApp.',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -377,7 +377,7 @@ export default {
           type: 'positive',
           progress: true,
           position: 'top',
-          message: `Whatsapp ${whatsapp.id ? 'editado' : 'criado'} com sucesso!`,
+          message: `Whatsapp ${whatsapp.id ? 'editado' : 'creado'} con exito!`,
           actions: [{
             icon: 'close',
             round: true,
@@ -390,7 +390,7 @@ export default {
           type: 'error',
           progress: true,
           position: 'top',
-          message: 'Ops! Verifique os erros... O nome da conexão não pode existir na plataforma, é um identificador único.',
+          message: 'Ops! Verificar errores... El nombre de la conexión no puede existir en la plataforma, es un identificador único.',
           actions: [{
             icon: 'close',
             round: true,
