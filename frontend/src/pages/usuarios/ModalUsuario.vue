@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-dialog
     persistent
     :value="modalUsuario"
@@ -7,7 +7,7 @@
   >
     <q-card style="width: 600px">
       <q-card-section>
-        <div class="text-h6">Cadastrar Usuário</div>
+        <div class="text-h6">Registrar Usuario</div>
       </q-card-section>
       <q-card-section class="q-col-gutter-sm">
         <div class="row q-col-gutter-sm">
@@ -38,7 +38,7 @@
               :validator="$v.usuario.password"
               @blur="$v.usuario.password.$touch"
               :type="isPwd ? 'password' : 'text'"
-              label="Senha"
+              label="Contraseña"
             >
               <template v-slot:append>
                 <q-icon
@@ -69,14 +69,14 @@
       <q-card-actions align="right">
         <q-btn
           rounded
-          label="Sair"
+          label="Salir"
           class="q-px-md q-mr-sm"
           color="negative"
           v-close-popup
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           class="q-px-md"
           color="primary"
           @click="handleUsuario"
