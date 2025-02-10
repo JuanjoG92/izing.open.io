@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <div class="row col q-pa-md justify-between items-center">
       <h1> Panel de Atenciones </h1>
