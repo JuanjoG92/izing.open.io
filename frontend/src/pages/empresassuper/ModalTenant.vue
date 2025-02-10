@@ -10,7 +10,7 @@
       class="q-pa-lg"
     >
       <q-card-section>
-        <div class="text-h6">{{ tenantEdicao.id ? 'Editar': 'Criar' }} Tenant</div>
+        <div class="text-h6">{{ tenantEdicao.id ? 'Editar': 'Criar' }} Empresa</div>
       </q-card-section>
       <q-card-section>
         <q-toggle
@@ -149,7 +149,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: 'Empresa criada!',
+            message: 'Empresa creada!',
             actions: [{
               icon: 'close',
               round: true,
