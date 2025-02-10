@@ -15,7 +15,7 @@
         </div>
       </q-card-section>
       <q-card-section class="q-pa-sm q-pl-md text-bold">
-        Datos Contacto
+        Datos del Contacto
       </q-card-section>
       <q-card-section class="q-pa-sm q-pl-md row q-col-gutter-md">
         <c-input
@@ -163,7 +163,7 @@ export default {
         if (!this.contactId) return
         const { data } = await ObterContato(this.contactId)
         this.contato = data
-        if (data.number.substring(0, 2) === '55') {
+        if (data.number.substring(0, 2) === '549') {
           this.contato.number = data.number.substring(0)
         }
       } catch (error) {
