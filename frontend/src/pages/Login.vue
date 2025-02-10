@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <q-layout class="vertical-center">
     <q-page-container>
       <q-page class="flex justify-center items-center">
@@ -81,7 +81,7 @@
               :loading="loading"
               @click="fazerLogin"
             >
-              Login
+              Iniciar sesión
               <span slot="loading">
                 <q-spinner-puff class="on-left" />Logando...
               </span>
@@ -134,7 +134,7 @@ export default {
     fazerLogin () {
       this.$v.form.$touch()
       if (this.$v.form.$error) {
-        this.$q.notify('Informe usuário e senha corretamente.')
+        this.$q.notify('Introduzca correctamente su nombre de usuario y contraseña.')
         return
       }
       this.loading = true
