@@ -73,7 +73,7 @@ export default {
             // console.log(this.notifications)
           } catch (err) {
             console.log('error try')
-            this.$notificarErro('Algum problema', err)
+            this.$notificarErro('Algun problema', err)
             console.error(err)
           }
         }
@@ -95,7 +95,7 @@ export default {
           this.$q.notify({
             position: 'top',
             icon: 'mdi-wifi-arrow-up-down',
-            message: `A conexão com o WhatsApp está pronta e o mesmo está habilitado para enviar e receber mensagens. Conexão: ${data.session.name}. Número: ${data.session.number}.`,
+            message: `La conexión a WhatsApp está lista y está habilitada para enviar y recibir mensajes. Conexión: ${data.session.name}. Número: ${data.session.number}.`,
             type: 'positive',
             color: 'primary',
             html: true,
@@ -113,7 +113,7 @@ export default {
 
       socket.on(`${usuario.tenantId}:change_battery`, data => {
         this.$q.notify({
-          message: `Bateria do celular do whatsapp ${data.batteryInfo.sessionName} está com bateria em ${data.batteryInfo.battery}%. Necessário iniciar carregamento.`,
+          message: `Batería del celular WhatsApp ${data.batteryInfo.sessionName} está con bateria en ${data.batteryInfo.battery}%. Necesario cargar..`,
           type: 'negative',
           progress: true,
           position: 'top',
@@ -143,7 +143,7 @@ export default {
             this.$store.commit('UPDATE_NOTIFICATIONS_P', data_noti.data)
             verify = data_noti
           } catch (err) {
-            this.$notificarErro('Algum problema', err)
+            this.$notificarErro('Algun problema', err)
             console.error(err)
           }
           // Faz verificação para se certificar que notificação pertence a fila do usuário
