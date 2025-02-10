@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <q-dialog
     :value="modalWhatsapp"
     @hide="fecharModal"
@@ -54,7 +54,7 @@
               outlined
               dense
               :options="hubOptions"
-              label="Selecione um Hub"
+              label="Selecione un Hub"
               filled />
           </div>
           <div
@@ -74,7 +74,7 @@
           >
             <div class="col">
               <fieldset class="full-width q-pa-md rounded-all">
-                <legend>Dados da conta do Instagram</legend>
+                <legend>Datos de la cuenta de Instagram</legend>
                 <div
                   class="col-12 q-mb-md"
                   v-if="whatsapp.type === 'instagram'"
@@ -82,9 +82,9 @@
                   <c-input
                     outlined
                     dense
-                    label="Usuário"
+                    label="Usuario"
                     v-model="whatsapp.instagramUser"
-                    hint="Seu usuário do Instagram (sem @)"
+                    hint="Su usuario do Instagram (sin @)"
                   />
                 </div>
                 <div
@@ -98,7 +98,7 @@
                     @click="isEdit = !isEdit"
                   >
                     <q-tooltip>
-                      Alterar senha
+                      Cambiar contraseña
                     </q-tooltip>
                   </q-btn>
                 </div>
@@ -112,7 +112,7 @@
                     label="Senha"
                     :type="isPwd ? 'password' : 'text'"
                     v-model="whatsapp.instagramKey"
-                    hint="Senha utilizada para logar no Instagram"
+                    hint="Contraseña utilizada para iniciar sesión en Instagram"
                     placeholder="*************"
                     :disable="!isEdit"
                   >
@@ -126,7 +126,7 @@
                         @click="isEdit = !isEdit"
                       >
                         <q-tooltip>
-                          Cancelar alteração de senha
+                          Cancelar cambio de contraseña
                         </q-tooltip>
 
                       </q-btn>
@@ -421,7 +421,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: `Whatsapp ${this.whatsAppEdit.id ? 'editado' : 'criado'} com sucesso!`,
+            message: `Whatsapp ${this.whatsAppEdit.id ? 'editado' : 'creado'} con éxito!`,
             actions: [{
               icon: 'close',
               round: true,
