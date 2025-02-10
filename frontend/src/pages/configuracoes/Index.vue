@@ -4,12 +4,12 @@
       <q-item-label
         header
         class="text-bold text-h6 q-mb-lg"
-      >Configurações</q-item-label>
+      >Configuraciones</q-item-label>
 
       <q-item-label
         caption
         class="q-mt-lg q-pl-sm"
-      >Módulo: Atendimento</q-item-label>
+      >Módulo: Atención</q-item-label>
       <q-separator spaced />
 
       <q-item
@@ -17,8 +17,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Não visualizar Tickets já atribuidos à outros usuários</q-item-label>
-          <q-item-label caption>Somente o usuário responsável pelo ticket e/ou os administradores visualizarão a atendimento.</q-item-label>
+          <q-item-label>No ver los tickets ya asignados a otros usuarios</q-item-label>
+          <q-item-label caption>Sólo el usuario responsable del ticket y/o administradores verán la atención..</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-toggle
@@ -40,8 +40,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Não visualizar Tickets no ChatBot</q-item-label>
-          <q-item-label caption>Somente administradores poderão visualizar tickets que estivem interagindo com o ChatBot.</q-item-label>
+          <q-item-label>No visualizar Tickets no ChatBot</q-item-label>
+          <q-item-label caption>Sólo los administradores podrán ver los tickets con los que haya interactuado el ChatBot..</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-toggle
@@ -63,8 +63,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Forçar atendimento via Carteira</q-item-label>
-          <q-item-label caption>Caso o contato tenha carteira vínculada, o sistema irá direcionar o atendimento somente para os donos da carteira de clientes.</q-item-label>
+          <q-item-label>Forzar atención via portafolio</q-item-label>
+          <q-item-label caption>Si el contacto tiene un portafolio vinculado, el sistema direccionará el servicio únicamente a los titulares de la cartera de clientes..</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-toggle
@@ -86,8 +86,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Fluxo ativo para o Bot de atendimento</q-item-label>
-          <q-item-label caption>Fluxo a ser utilizado pelo Bot para os novos atendimentos</q-item-label>
+          <q-item-label>Flujo activo para el Bot de atención</q-item-label>
+          <q-item-label caption>Flujo que utilizará el Bot para nuevas atenciones</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-select
@@ -111,8 +111,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Ignorar Mensagens de Grupo</q-item-label>
-          <q-item-label caption>Habilitando esta opção o sistema não abrirá ticket para grupos</q-item-label>
+          <q-item-label>Ignorar Mensajes de Grupo</q-item-label>
+          <q-item-label caption>Al habilitar esta opción el sistema no abrirá tickets para grupos</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-toggle
@@ -134,8 +134,8 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>Recusar chamadas no Whatsapp</q-item-label>
-          <q-item-label caption>Quando ativo, as ligações de aúdio e vídeo serão recusadas, automaticamente.</q-item-label>
+          <q-item-label>Rechazar llamadas en Whatsapp</q-item-label>
+          <q-item-label caption>Cuando esté activo, las llamadas de audio y video se rechazarán automáticamente..</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-toggle
@@ -164,7 +164,7 @@
             autogrow
             dense
             outlined
-            label="Mensagem ao rejeitar ligação:"
+            label="Mensaje al rechazar una llamada:"
             input-style="min-height: 6vh; max-height: 9vh;"
             debounce="700"
             @input="atualizarConfiguracao('callRejectMessage')"
@@ -190,7 +190,7 @@
             autogrow
             dense
             outlined
-            label="Seu Token Notificame"
+            label="Su token Notificame"
             input-style="min-height: 6vh;"
             debounce="700"
             @input="atualizarConfiguracao('hubToken')"
@@ -246,7 +246,7 @@ export default {
         await AlterarConfiguracao(params)
         this.$q.notify({
           type: 'positive',
-          message: 'Configuração alterada!',
+          message: 'Configuración cambiada!',
           progress: true,
           actions: [{
             icon: 'close',
@@ -257,7 +257,7 @@ export default {
       } catch (error) {
         console.error('error - AlterarConfiguracao', error)
         this.$data[key] = this.$data[key] === 'enabled' ? 'disabled' : 'enabled'
-        this.$notificarErro('Ocorreu um erro!', error)
+        this.$notificarErro('Ocorrio un error!', error)
       }
     }
   },
