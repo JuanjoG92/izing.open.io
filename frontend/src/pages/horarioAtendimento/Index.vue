@@ -1,25 +1,25 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <q-card
       class="q-ma-sm "
       square
     >
       <div class="text-h5 q-pa-sm q-ma-sm">
-        Horário de Atendimento
+        Horario de Atención
         <q-icon name="help">
           <q-tooltip content-class="bg-light-blue-1 text-black q-pa-sm shadow-4">
-            <span class="text-weight-medium"> Tipos de horário: </span>
+            <span class="text-weight-medium"> Tipos de horario: </span>
             <span class="row col">
-              Aberto: Estabelecimento aberto durante todo o dia. Não será feito envio de mensagem de ausência;
+              Abierto: Establecimiento abierto todo el día. No se enviará ningún mensaje de ausencia.;
             </span>
             <span class="row col">
-              Fechado: Estabelecimento fechado durante todo o dia. Será feito envio de mensagem de ausência, independente do horário;
+              Cerrado: Establecimiento cerrado todo el día. Se enviará un mensaje de ausencia, independientemente de la hora.;
             </span>
             <span class="row col">
-              Horário: Representa o horário de funcionamento do estabelecimento. O sistema enviará mensagem de ausênica quando mensagens forem recebidas fora dos horários estabelecidos.
+              Horario: Representa el horario de atención del establecimiento. El sistema enviará un mensaje de ausencia cuando se reciban mensajes fuera del horario establecido..
             </span>
             <span class="row col">
-              **Importante: A mensagem de ausência será enviada após o encerramento do atendimento automático.
+              **Importante: El mensaje de ausencia se enviará una vez finalizado la atención automática..
             </span>
           </q-tooltip>
         </q-icon>
@@ -27,7 +27,7 @@
         <q-btn
           rounded
           color="positive"
-          label="Salvar"
+          label="Guardar"
           class="float-right"
           @click="salvarHorariosAtendimento"
         />
@@ -65,19 +65,19 @@
                     rounded
                     outlined
                     class="col-grow"
-                    error-message="Obrigatório"
+                    error-message="Obligatorio"
                     hide-underline
                     type="time"
                     v-model="dia.hr1"
                   />
-                  <h6>às</h6>
+                  <h6>hasta</h6>
                   <q-input
                     :disable="dia.type !== 'H'"
                     dense
                     rounded
                     outlined
                     class="col-grow"
-                    error-message="Obrigatório"
+                    error-message="Obligatorio"
                     hide-underline
                     type="time"
                     v-model="dia.hr2"
@@ -90,19 +90,19 @@
                     rounded
                     outlined
                     class="col-grow"
-                    error-message="Obrigatório"
+                    error-message="Obligatorio"
                     hide-underline
                     type="time"
                     v-model="dia.hr3"
                   />
-                  <h6>às</h6>
+                  <h6>hasta</h6>
                   <q-input
                     :disable="dia.type !== 'H'"
                     dense
                     outlined
                     rounded
                     class="col-grow"
-                    error-message="Obrigatório"
+                    error-message="Obligatorio"
                     hide-underline
                     type="time"
                     v-model="dia.hr4"
@@ -116,10 +116,10 @@
     </q-card>
     <q-card class="q-ma-sm q-mt-md full-full-height">
       <div class="text-h6 q-pa-sm q-ma-sm">
-        Mensagem de Ausência
+        Mensaje de ausencia
         <q-btn
           color="positive"
-          label="Salvar"
+          label="Guardar"
           rounded
           class="float-right"
           @click="salvarMensagemAusencia"
@@ -150,7 +150,7 @@
                   :showSearch="false"
                   :emojisByRow="20"
                   labelSearch="Localizar..."
-                  lang="pt-BR"
+                  lang="es"
                   @select="onInsertSelectEmoji"
                 />
               </q-menu>
@@ -182,7 +182,7 @@
               ref="inputEnvioMensagem"
               style="min-height: 9vh; max-height: 9vh;"
               class="q-pa-sm bg-white rounded-all full-width"
-              placeholder="Digite a mensagem"
+              placeholder="Introduce el mensaje"
               autogrow
               dense
               outlined
@@ -206,21 +206,21 @@ export default {
     return {
       userProfile: 'user',
       optType: [
-        { value: 'O', label: 'Aberto' },
-        { value: 'C', label: 'Fechado' },
-        { value: 'H', label: 'Horário' }
+        { value: 'O', label: 'Abierto' },
+        { value: 'C', label: 'Cerrado' },
+        { value: 'H', label: 'Horario' }
       ],
       variaveis: [
-        { label: 'Nome', value: '{{name}}' },
-        { label: 'Saudação', value: '{{greeting}}' }
+        { label: 'Nombre', value: '{{name}}' },
+        { label: 'Saludo', value: '{{greeting}}' }
       ],
       businessHours: [
         { day: 0, label: 'Domingo', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
-        { day: 1, label: 'Segunda-Feira', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
-        { day: 2, label: 'Terça-Feira', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
-        { day: 3, label: 'Quarta-Feira', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
-        { day: 4, label: 'Quinta-Feira', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
-        { day: 5, label: 'Sexta-Feira', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
+        { day: 1, label: 'Lunes', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
+        { day: 2, label: 'Martes', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
+        { day: 3, label: 'Miercoles', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
+        { day: 4, label: 'Jueves', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
+        { day: 5, label: 'Viernes', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' },
         { day: 6, label: 'Sábado', type: 'O', hr1: '08:00', hr2: '12:00', hr3: '14:00', hr4: '18:00' }
       ],
       messageBusinessHours: null
