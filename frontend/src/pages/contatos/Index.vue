@@ -3,7 +3,7 @@
     <q-table
       class="my-sticky-dynamic"
       title="Contatos"
-      :id="`tabela-contatos-${isChatContact ? 'atendimento' : ''}`"
+      :id="`tabela-contatos-${isChatContact ? 'atencion' : ''}`"
       :data="contacts"
       :columns="columns"
       :loading="loading"
@@ -34,7 +34,7 @@
             icon="mdi-close"
             @click="$router.push({ name: 'chat-empty' })"
           />
-          Contatos
+          Contactos
         </div>
         <q-space />
         <q-input
@@ -48,7 +48,7 @@
           debounce="500"
           v-model="filter"
           clearable
-          placeholder="Localize"
+          placeholder="Localizar"
           @input="filtrarContato"
         >
           <template v-slot:prepend>
@@ -58,7 +58,7 @@
         <q-space />
         <q-btn-dropdown
           color="primary"
-          label="Adicionar"
+          label="Agregar"
           rounded
           split
           class="glossy"
@@ -187,7 +187,7 @@
             use-chips
             accept=".csv"
             v-model="file"
-            label="Arquivo de contatos"
+            label="Archivo de contactos"
             hint="Colunas: Nome; Numero"
           >
             <template v-slot:prepend>
@@ -253,10 +253,10 @@
                 >
                   <q-item-section>
                     <q-item-label class="text-negative text-bold">
-                      Ops... Sem etiquetas criadas!
+                      Ops... Sin etiquetas creadas!
                     </q-item-label>
                     <q-item-label caption>
-                      Cadastre novas etiquetas na administração de sistemas.
+                      Registrar nuevas etiquetas en la administración del sistema.
                     </q-item-label>
                   </q-item-section>
                 </q-item>
@@ -275,7 +275,7 @@
               :max-values="1"
               :options="usuarios"
               use-chips
-              label="Carteira"
+              label="Portafolio"
               option-value="id"
               option-label="name"
               emit-value
@@ -367,7 +367,7 @@ export default {
         { name: 'profilePicUrl', label: '', field: 'profilePicUrl', style: 'width: 50px', align: 'center' },
         {
           name: 'name',
-          label: 'Nome',
+          label: 'Nombre',
           field: 'name',
           align: 'left',
           style: 'width: 300px',
@@ -381,7 +381,7 @@ export default {
         { name: 'number', label: 'WhatsApp', field: 'number', align: 'center', style: 'width: 300px' },
         {
           name: 'wallet',
-          label: 'Carteira',
+          label: 'Portafolio',
           field: 'wallet',
           align: 'center',
           style: 'width: 300px'
@@ -408,13 +408,13 @@ export default {
           }
         },
         { name: 'email', label: 'Email', field: 'email', style: 'width: 500px', align: 'left' },
-        { name: 'acoes', label: 'Ações', field: 'acoes', align: 'center' }
+        { name: 'acoes', label: 'Acciones', field: 'acoes', align: 'center' }
       ]
     }
   },
   methods: {
     downloadModelCsv () {
-      const csvContent = 'nome;numero\nCliente;5511999999999'
+      const csvContent = 'nome;numero\nCliente;5411999999999'
       const blob = new Blob([csvContent], { type: 'text/csv' })
       const link = document.createElement('a')
       link.href = window.URL.createObjectURL(blob)
@@ -431,8 +431,8 @@ export default {
       try {
         this.$q.notify({
           type: 'warning',
-          message: 'Isso pode demorar um pouco.',
-          caption: 'Após finalizar, a página será atualizada.',
+          message: 'Isso puode demorar un pouco.',
+          caption: 'Una vez terminado, la página se actualizará..',
           position: 'top'
         })
         const formData = new FormData()
@@ -444,7 +444,7 @@ export default {
           formData.append('wallets', this.wallets)
         }
         await ImportarArquivoContato(formData)
-        this.$notificarSucesso('Contatos importados com sucesso!')
+        this.$notificarSucesso('Contactos importados con éxito!')
         this.$router.go(0)
       } catch (err) {
         this.$notificarErro(err)
@@ -456,7 +456,7 @@ export default {
         this.usuarios = data.users
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Problema ao carregar usuários', error)
+        this.$notificarErro('Problema al cargar usuarios', error)
       }
     },
     async listarEtiquetas () {
@@ -479,7 +479,7 @@ export default {
           this.downloadFile(downloadLink)
         })
         .catch(error => {
-          console.error('Erro ao exportar contatos:', error)
+          console.error('Error al exportar contactos:', error)
         })
     },
     LOAD_CONTACTS (contacts) {
@@ -548,8 +548,8 @@ export default {
       })
 
       this.$q.dialog({
-        title: `Contato: ${contact.name}`,
-        message: 'Selecione o canal para iniciar o atendimento.',
+        title: `Contacto: ${contact.name}`,
+        message: 'Seleccione el canal para iniciar la atención.',
         options: {
           type: 'radio',
           model: channelId,
@@ -585,7 +585,7 @@ export default {
           await this.$store.commit('SET_HAS_MORE', true)
           await this.$store.dispatch('AbrirChatMensagens', ticket)
           this.$q.notify({
-            message: `Atendimento Iniciado || ${ticket.contact.name} - Ticket: ${ticket.id}`,
+            message: `Atención Iniciado || ${ticket.contact.name} - Ticket: ${ticket.id}`,
             type: 'positive',
             position: 'top',
             progress: true,
@@ -602,7 +602,7 @@ export default {
             this.abrirAtendimentoExistente(contact, ticketAtual)
             return
           }
-          this.$notificarErro('Ocorreu um erro!', error)
+          this.$notificarErro('Ocorrio un error!', error)
         }
         this.loading = false
       })
@@ -613,16 +613,16 @@ export default {
     },
     deleteContact (contactId) {
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente deletar o contato? ',
+        title: '¡¡Atención!! ¿Realmente quieres eliminar el contacto? ',
         // message: 'Mensagens antigas não serão apagadas no whatsapp.',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           rounded: true,
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           rounded: true,
           push: true
@@ -637,7 +637,7 @@ export default {
               type: 'positive',
               progress: true,
               position: 'top',
-              message: 'Contato deletado!',
+              message: 'Contacto borrado!',
               actions: [{
                 icon: 'close',
                 round: true,
@@ -647,7 +647,7 @@ export default {
           })
           .catch(error => {
             console.error(error)
-            this.$notificarErro('Não é possível deletar o contato', error)
+            this.$notificarErro('No se puede eliminar el contacto', error)
           })
         this.loading = false
       })
@@ -664,14 +664,14 @@ export default {
     abrirAtendimentoExistente (contato, ticket) {
       this.$q.dialog({
         title: 'Atenção!!',
-        message: `${contato.name} possui um atendimento em curso (Atendimento: ${ticket.id}). Deseja abrir o atendimento?`,
+        message: `${contato.name} posee una atención en curso (Atencion: ${ticket.id}). Desea abrir atención?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -689,16 +689,16 @@ export default {
     },
     confirmarSincronizarContatos () {
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente sincronizar os contatos? ',
-        message: 'Todas os contatos com os quais você já conversou pelo Whatsapp serão criados. Isso pode demorar um pouco...',
+        title: '¡¡Atención!! ¿Realmente quieres sincronizar contactos? ',
+        message: 'Se crearán todos los contactos con los que alguna vez hayas chateado en WhatsApp. Esto puede tardar un tiempo....',
         cancel: {
-          label: 'Não',
+          label: 'No',
           rounded: true,
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           rounded: true,
           color: 'warning',
           push: true
@@ -719,7 +719,7 @@ export default {
           progress: true,
           position: 'top',
           textColor: 'black',
-          message: 'Contatos estão sendo atualizados. Isso pode levar um tempo...',
+          message: 'Se están actualizando los contactos. Esto puede tardar un tiempo....',
           actions: [{
             icon: 'close',
             round: true,
@@ -728,7 +728,7 @@ export default {
         })
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro ao sincronizar os contatos', error)
+        this.$notificarErro('Se produjo un error al sincronizar los contactos', error)
         this.loading = true
       }
       this.loading = true
