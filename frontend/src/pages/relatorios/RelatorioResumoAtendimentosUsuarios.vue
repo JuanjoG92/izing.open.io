@@ -1,12 +1,12 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <q-card bordered>
       <q-card-section>
-        <div class="text-h6 q-px-sm"> Relatório Resumo Atendimentos Usuários </div>
+        <div class="text-h6 q-px-sm"> Informe Resumido de Atenciones </div>
       </q-card-section>
       <q-card-section class="q-pt-none">
         <fieldset class="rounded-all">
-          <legend class="q-px-sm">Filtros (Data Atendimentos)</legend>
+          <legend class="q-px-sm">Filtros (Fecha de Atención)</legend>
           <div class="row q-gutter-md items-end">
             <div class="col-grow">
               <label>Início</label>
@@ -28,7 +28,7 @@
               <q-btn
                 class="q-mr-sm"
                 color="primary"
-                label="Gerar"
+                label="Generar"
                 icon="refresh"
                 rounded
                 @click="gerarRelatorio"
@@ -169,15 +169,15 @@ export default {
       bl_sintetico: false,
       dadosResumo: [],
       columns: [
-        { name: 'name', label: 'Nome', field: 'name', align: 'left', style: 'width: 300px', format: v => !v ? 'Não Informado' : v },
-        { name: 'email', label: 'E-Mail', field: 'email', align: 'left', style: 'width: 300px', format: v => !v ? 'Não Informado' : v },
-        { name: 'qtd_pendentes', label: 'Pendentes', field: 'qtd_pendentes', align: 'center', style: 'width: 300px; text-align: center;' },
-        { name: 'qtd_em_atendimento', label: 'Em Atendimento', field: 'qtd_em_atendimento', align: 'center', style: 'width: 300px; text-align: center;' },
-        { name: 'qtd_resolvidos', label: 'Resolvidos', field: 'qtd_resolvidos', align: 'center', style: 'width: 300px; text-align: center;' },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left', style: 'width: 300px', format: v => !v ? 'No Informado' : v },
+        { name: 'email', label: 'E-Mail', field: 'email', align: 'left', style: 'width: 300px', format: v => !v ? 'No Informado' : v },
+        { name: 'qtd_pendentes', label: 'Pendientes', field: 'qtd_pendentes', align: 'center', style: 'width: 300px; text-align: center;' },
+        { name: 'qtd_em_atendimento', label: 'En Atención', field: 'qtd_em_atendimento', align: 'center', style: 'width: 300px; text-align: center;' },
+        { name: 'qtd_resolvidos', label: 'Resueltos', field: 'qtd_resolvidos', align: 'center', style: 'width: 300px; text-align: center;' },
         { name: 'qtd_por_usuario', label: 'Total', field: 'qtd_por_usuario', align: 'center', style: 'width: 300px; text-align: center;' },
-        { name: 'menor_tempo_por_usuario', label: 'Menor Tempo (Min)', field: 'menor_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
-        { name: 'maior_tempo_por_usuario', label: 'Maior Tempo (Min)', field: 'maior_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
-        { name: 'tempo_medio_por_usuario', label: 'Tempo Médio (Min)', field: 'tempo_medio_por_usuario', style: 'width: 300px; text-align: center;', align: 'left', format: v => this.$formatarValorMoeda(v, 0) }
+        { name: 'menor_tempo_por_usuario', label: 'Menor Tiempo (Min)', field: 'menor_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
+        { name: 'maior_tempo_por_usuario', label: 'Mayor Tiempo (Min)', field: 'maior_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
+        { name: 'tempo_medio_por_usuario', label: 'Tiempo Médio (Min)', field: 'tempo_medio_por_usuario', style: 'width: 300px; text-align: center;', align: 'left', format: v => this.$formatarValorMoeda(v, 0) }
       ],
       pesquisa: {
         startDate: format(sub(new Date(), { days: 30 }), 'yyyy-MM-dd'),
