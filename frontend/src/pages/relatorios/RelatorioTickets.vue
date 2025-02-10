@@ -1,8 +1,8 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
 <q-card bordered>
   <q-card-section>
-    <div class="text-h6 q-px-sm">Relatório Tickets</div>
+    <div class="text-h6 q-px-sm">Informe de Tickets</div>
   </q-card-section>
   <q-card-section class="q-pt-none">
     <fieldset class="rounded-all">
@@ -15,7 +15,7 @@
             rounded
             dense
             v-model="searchQuery"
-            label="Buscar por protocolo, nome, ticket ou celular"
+            label="Búsqueda por protocolo, nombre, ticket o celular"
           />
         </div>
         <div class="col-xs-6 col-md-3">
@@ -73,7 +73,7 @@
             option-label="name"
             emit-value
             map-options
-            label="Atendente"
+            label="Asistente"
           />
         </div>
         <!-- Botões de ação -->
@@ -82,7 +82,7 @@
             class="q-mr-sm"
             color="primary"
             rounded
-            label="Gerar"
+            label="Generar"
             icon="refresh"
             @click="applyFilters"
           />
@@ -90,7 +90,7 @@
             class="q-mr-sm"
             color="black"
             rounded
-            label="Limpar Filtro"
+            label="Limpiar Filtro"
             @click="clearFilters"
           />
           <q-btn
@@ -109,22 +109,22 @@
       <div class="col-xs-12 q-mt-sm">
         <div
           class="tableLarge q-ma-sm q-markup-table q-table__container q-table__card q-table--cell-separator q-table--flat q-table--bordered q-table--no-wrap">
-            <!-- Exibir estado de carregamento -->
+            <!-- Mostrar el estado de carga -->
     <div v-if="loading" class="loading">
-      Carregando informações, por favor aguarde...
+      Cargando información, por favor espere...
     </div>
 
-        <!-- Tabela de atendimentos -->
+        <!-- Tabla de atenciones -->
         <table v-if="!loading" class="styled-table">
       <thead>
         <tr>
           <th>Ticket</th>
-          <th>Status</th>
-          <th>Nome</th>
+          <th>Estado</th>
+          <th>Nombre</th>
           <th>Fila</th>
-          <th>Atendente</th>
-          <th>Horário Criação</th>
-          <th>Horário Finalização</th>
+          <th>Asistente</th>
+          <th>Horario Creado</th>
+          <th>Horario Finalizado</th>
           <th>Chat</th>
         </tr>
       </thead>
@@ -167,9 +167,9 @@ export default {
   data () {
     return {
       optionsStatus: [
-        { value: 'open', label: 'Aberto' },
-        { value: 'pending', label: 'Pendente' },
-        { value: 'closed', label: 'Fechado' }
+        { value: 'open', label: 'Abierto' },
+        { value: 'pending', label: 'Pendiente' },
+        { value: 'closed', label: 'Cerrado' }
       ],
       userProfile: 'user',
       contacts: [], // Lista de tickets
@@ -180,7 +180,7 @@ export default {
       queueFilter: '',
       queues: [], // Lista de filas
       attendantFilter: '',
-      attendants: [], // Lista de atendentes
+      attendants: [], // Lista de asistentes
       pageNumber: 1,
       rowsPerPage: 30,
       hasMore: false,
@@ -248,7 +248,7 @@ export default {
           this.hasMore = false
         }
       } catch (error) {
-        console.error('Erro ao consultar tickets:', error)
+        console.error('Error al consultar tickets:', error)
       } finally {
         this.loading = false
       }
@@ -261,7 +261,7 @@ export default {
         const attendantsData = await ListarUsuarios()
         this.attendants = attendantsData.data.users
       } catch (error) {
-        console.error('Erro ao carregar filas e atendentes:', error)
+        console.error('Error al cargar filas y asistentes:', error)
       }
     },
     applyFilters () {
