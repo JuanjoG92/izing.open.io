@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <q-table
       class="my-sticky-dynamic q-ma-lg"
@@ -20,7 +20,7 @@
           debounce="500"
           v-model="filter"
           clearable
-          placeholder="Localize"
+          placeholder="Localizar"
           @input="filtrarUsuario"
         >
           <template v-slot:prepend>
@@ -35,7 +35,7 @@
             'q-ml-none q-mt-md q-mr-md': $q.screen.width < 500
           }"
           color="primary"
-          label="Adicionar"
+          label="Agregar"
           @click="usuarioSelecionado = {}; modalUsuario = true"
         />
 
@@ -119,7 +119,7 @@ export default {
       },
       loading: false,
       columns: [
-        { name: 'name', label: 'Nome', field: 'name', align: 'left' },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left' },
         { name: 'email', label: 'E-mail', field: 'email', align: 'left' },
         {
           name: 'queues',
@@ -131,7 +131,7 @@ export default {
           style: 'max-width: 400px;'
         },
         { name: 'profile', label: 'Perfil', field: 'profile', align: 'left', format: (v) => this.optionsProfile.find(o => o.value == v).label },
-        { name: 'acoes', label: 'Ações', field: 'acoes', align: 'center' }
+        { name: 'acoes', label: 'Acciones', field: 'acoes', align: 'center' }
       ]
     }
   },
