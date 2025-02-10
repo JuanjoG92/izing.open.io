@@ -23,7 +23,7 @@
           square
           outlined
           v-model="tenant.name"
-          label="Nome"
+          label="Nombre"
         />
         <q-input
           class="row col"
@@ -31,7 +31,7 @@
           outlined
           type="number"
           v-model="tenant.maxUsers"
-          label="Usuários"
+          label="Usuarios"
         />
         <q-input
           class="row col"
@@ -39,7 +39,7 @@
           outlined
           type="number"
           v-model="tenant.maxConnections"
-          label="Conexões"
+          label="Conexiones"
         />
       </q-card-section>
       <q-card-actions
@@ -55,7 +55,7 @@
         />
         <q-btn
           flat
-          label="Salvar"
+          label="Guardar"
           color="primary"
           @click="validateAndHandleTenant"
         />
@@ -161,7 +161,7 @@ export default {
         this.fecharModal()
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro ao criar a Empresa', error)
+        this.$notificarErro('Se produjo un error al crear la empresa', error)
       }
     },
     validateAndHandleTenant () {
@@ -172,7 +172,7 @@ export default {
           type: 'negative',
           progress: true,
           position: 'top',
-          message: 'Preencha todos os campos obrigatórios!',
+          message: 'Rellene todos los campos obligatorios!',
           actions: [{
             icon: 'close',
             round: true,
