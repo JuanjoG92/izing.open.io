@@ -6,16 +6,16 @@
     >
       <q-card-section>
         <div class="row text-h6">
-          Campanha: {{ $route.params.campanha.name }}
+          Campaña: {{ $route.params.campanha.name }}
         </div>
         <div class="row text-caption">
-          Início: {{ formatDate($route.params.campanha.start) }} - Status: {{ $route.params.campanha.status }}
+          Inicio: {{ formatDate($route.params.campanha.start) }} - Provincia: {{ $route.params.campanha.status }}
         </div>
         <q-btn
           rounded
           class="absolute-top-right q-ma-md"
           icon="mdi-arrow-left"
-          label="Listar Campanhas"
+          label="Ver Campañas"
           color="black"
           @click="$router.push({ name: 'campanhas' })"
         />
@@ -23,7 +23,7 @@
     </q-card>
     <q-table
       class="my-sticky-dynamic q-ma-sm"
-      title="Contatos"
+      title="Contactos"
       id="tabela-contatos-campanha"
       :data="contatosCampanha"
       :columns="columns"
@@ -35,7 +35,7 @@
     >
       <template v-slot:top>
         <div class="row col-4 q-table__title items-center ">
-          Contatos
+          Contactos
         </div>
         <q-space />
         <q-btn
@@ -46,7 +46,7 @@
           @click="listarContatosCampanha"
         >
           <q-tooltip>
-            Atualizar Listagem
+            Actualizar listado
           </q-tooltip>
         </q-btn>
         <q-btn
@@ -55,7 +55,7 @@
           icon="close"
           outline
           rounded
-          label="Limpar Campanha"
+          label="Limpiar Campaña"
           @click="deletarTodosContatosCampanha"
           v-if="$route.params.campanha.status === 'pending' ||
             $route.params.campanha.status === 'canceled'"
@@ -63,7 +63,7 @@
         <q-btn
           class="q-ml-md"
           color="primary"
-          label="Incluir Contatos"
+          label="Incluir Contactos"
           icon="add"
           rounded
           v-if="$route.params.campanha.status === 'pending' ||
@@ -118,7 +118,7 @@
       <q-card style="min-width: 80vw; width: 80vw">
         <q-card-section class="q-pt-none q-pt-md">
           <fieldset class="rounded-all">
-            <legend class="q-px-sm">Filtros (Data criação do contato)</legend>
+            <legend class="q-px-sm">Filtros (Fecha de creación del contacto)</legend>
             <div class="row q-gutter-md items-end">
               <div class="col-grow">
                 <label>Início</label>
@@ -138,7 +138,7 @@
               </div>
               <div class="col-xs-12 col-sm-4 grow text-center">
                 <q-select
-                  label="Estado (s)"
+                  label="Provincia (s)"
                   dense
                   rounded
                   outlined
@@ -274,7 +274,7 @@
                   rounded
                   v-model="pesquisa.searchParam"
                   clearable
-                  placeholder="Filtrar Nome ou Telefone"
+                  placeholder="Filtrar Nombre o Teléfono"
                 >
                   <template v-slot:prepend>
                     <q-icon name="search" />
@@ -286,7 +286,7 @@
                   class="q-mr-sm"
                   color="primary"
                   rounded
-                  label="Gerar"
+                  label="Generar"
                   icon="refresh"
                   @click="listarAddContatos"
                 />
@@ -398,16 +398,16 @@ export default {
       },
       ACK: { // Se ACK == 3 ou 4 entao color green
         '-1': 'Error',
-        0: 'Envio Pendente',
-        1: 'Entrega Pendente',
-        2: 'Recebida',
-        3: 'Lida',
-        4: 'Reproduzido'
+        0: 'Envio Pendiente',
+        1: 'Entrega Pendiente',
+        2: 'Recibido',
+        3: 'Leído',
+        4: 'Reproducido'
       },
       loading: false,
       columns: [
         { name: 'profilePicUrl', label: '', field: 'profilePicUrl', style: 'width: 50px', align: 'center' },
-        { name: 'name', label: 'Nome', field: 'name', align: 'left', style: 'width: 300px' },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left', style: 'width: 300px' },
         { name: 'number', label: 'WhatsApp', field: 'number', align: 'center', style: 'width: 300px' },
         {
           name: 'campaignContacts',
@@ -433,12 +433,12 @@ export default {
             return ''
           }
         },
-        { name: 'estado', label: 'Estado', field: 'number', style: 'width: 500px', align: 'left', format: v => this.definirEstadoNumero(v) },
-        { name: 'acoes', label: 'Ações', field: 'acoes', align: 'center' }
+        { name: 'estado', label: 'Provincia', field: 'number', style: 'width: 500px', align: 'left', format: v => this.definirEstadoNumero(v) },
+        { name: 'acoes', label: 'Acciones', field: 'acoes', align: 'center' }
       ],
       columnsAdd: [
         { name: 'profilePicUrl', label: '', field: 'profilePicUrl', style: 'width: 50px', align: 'center' },
-        { name: 'name', label: 'Nome', field: 'name', align: 'left', style: 'width: 300px' },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left', style: 'width: 300px' },
         { name: 'number', label: 'WhatsApp', field: 'number', align: 'center', style: 'width: 300px' },
         {
           name: 'tags',
@@ -454,7 +454,7 @@ export default {
             return ''
           }
         },
-        { name: 'estado', label: 'Estado', field: 'number', style: 'width: 500px', align: 'left', format: v => this.definirEstadoNumero(v) }
+        { name: 'estado', label: 'Provincia', field: 'number', style: 'width: 500px', align: 'left', format: v => this.definirEstadoNumero(v) }
 
       ],
       contatosAdd: [],
@@ -499,7 +499,7 @@ export default {
         })
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro!', error)
+        this.$notificarErro('Ocurrio un error!', error)
       }
     },
     async listarUsuarios () {
@@ -508,7 +508,7 @@ export default {
         this.usuarios = data.users
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Problema ao carregar usuários', error)
+        this.$notificarErro('Problema al cargar usuarios', error)
       }
     },
     deletarContatoCampanha (contato) {
@@ -519,7 +519,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: 'Contato excluído desta campanha',
+            message: 'Contacto excluido de esta campaña',
             actions: [{
               icon: 'close',
               round: true,
@@ -529,20 +529,20 @@ export default {
         })
         .catch(error => {
           console.error(error)
-          this.$notificarErro('Verifique os erros...', error)
+          this.$notificarErro('Verifique los errores...', error)
         })
     },
     deletarTodosContatosCampanha () {
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente retirar todos os contatos desta campanha? ',
+        title: '¡¡Atención!! ¿Realmente desea eliminar todos los contactos de esta campaña? ',
         // message: 'Mensagens antigas não serão apagadas no whatsapp.',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -551,11 +551,11 @@ export default {
         DeletarTodosContatosCampanha(this.$route.params.campanhaId)
           .then(res => {
             this.contatosCampanha = []
-            this.$notificarSucesso('Contato excluído desta campanha')
+            this.$notificarSucesso('Contacto excluído de essta campaña')
           })
           .catch(error => {
             console.error(error)
-            this.$notificarErro('Não foi possível excluir o contato da campanha', error)
+            this.$notificarErro('No se puede eliminar el contacto de la campaña', error)
           })
       })
     }
