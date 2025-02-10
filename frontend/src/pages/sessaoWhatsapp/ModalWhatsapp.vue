@@ -18,7 +18,7 @@
           /> {{ whatsapp.id ? 'Editar' :
               'Agregar'
             }}
-          Canal
+          Conexión
         </div>
       </q-card-section>
       <q-card-section>
@@ -94,7 +94,7 @@
                   <q-btn
                     color="positive"
                     icon="edit"
-                    label="Nova senha"
+                    label="Nueva contraseña"
                     @click="isEdit = !isEdit"
                   >
                     <q-tooltip>
@@ -435,7 +435,7 @@ export default {
           if (error.data.error === 'ERR_NO_PERMISSION_CONNECTIONS_LIMIT') {
             Notify.create({
               type: 'negative',
-              message: 'Limite de conexões atingida.',
+              message: 'Límite de conexión alcanzado.',
               caption: 'ERR_NO_PERMISSION_CONNECTIONS_LIMIT',
               position: 'top',
               progress: true
