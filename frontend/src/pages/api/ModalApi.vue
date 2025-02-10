@@ -10,11 +10,11 @@
       class="q-pa-lg"
     >
       <q-card-section>
-        <div class="text-h6">{{  apiEdicao.id ? 'Editar' : 'Criar'  }} Configuração API</div>
+        <div class="text-h6">{{  apiEdicao.id ? 'Editar' : 'Crear'  }} Configuración API</div>
       </q-card-section>
       <q-card-section>
         <fieldset class="q-pa-md full-width rounded-all">
-          <legend class="q-px-sm">Dados API</legend>
+          <legend class="q-px-sm">Datos API</legend>
           <div class="row q-col-gutter-md">
             <div class="col-xs-12 col-sm-6">
               <q-input
@@ -22,7 +22,7 @@
                 dense
                 outlined
                 v-model="api.name"
-                label="Nome da API"
+                label="Nombre da API"
                 @blur="$v.api.name.$touch"
                 :error="$v.api.name.$error"
               />
@@ -61,8 +61,8 @@
                 v-model="api.urlServiceStatus"
                 @blur="$v.api.urlServiceStatus.$touch"
                 :error="$v.api.urlServiceStatus.$error"
-                label="URL WebHook Status Sessão"
-                hint="Dispara a ação sempre que o status da sessão conectada ao whatsapp é alterado."
+                label="URL WebHook Status Sesión"
+                hint="Activa la acción siempre que se cambia el estado de la sesión conectada a WhatsApp."
               />
             </div>
             <div class="col-12 q-mt-md">
@@ -74,7 +74,7 @@
                 @blur="$v.api.urlMessageStatus.$touch"
                 :error="$v.api.urlMessageStatus.$error"
                 label="URL WebHook Status Mensagem"
-                hint="Dispara ação sempre que o status de uma mensagem é atualizado."
+                hint="Activa la acción cada vez que se actualiza el estado de un mensaje.."
               />
             </div>
             <div class="col-12 q-mt-md">
@@ -83,8 +83,8 @@
                 dense
                 outlined
                 v-model="api.authToken"
-                label="Token de autenticação"
-                hint="Será enviado como authorization no header. Se existir prefixo, deverá ser informado aqui. Ex.: Bearer, Token"
+                label="Token de autenticación"
+                hint="Se enviará como autorización en el encabezado. Si hay un prefijo, debe ingresarse aquí. Ex.: Bearer, Token"
               />
             </div>
           </div>
@@ -109,7 +109,7 @@
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           color="positive"
           @click="handleAPI"
         />
@@ -189,7 +189,7 @@ export default {
     async handleAPI () {
       this.$v.api.$touch()
       if (this.$v.api.$error) {
-        this.$notificarErro('Verifique os campos obrigatórios e inconsistências.')
+        this.$notificarErro('Verifique los campos obligatorios y las inconsistencias.')
         return
       }
       try {
@@ -201,13 +201,13 @@ export default {
         } else {
           const { data } = await CriarAPI(this.api)
           this.$emit('modal-api:criada', data)
-          this.$notificarSucesso('API criada')
+          this.$notificarSucesso('API creada')
         }
         this.loading = false
         this.fecharModal()
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro!', error)
+        this.$notificarErro('Ocorrio un error!', error)
       }
     }
   }
