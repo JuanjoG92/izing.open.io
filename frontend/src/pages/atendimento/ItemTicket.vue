@@ -92,7 +92,7 @@
               size="1.8em"
               class="q-mb-sm">
               <q-tooltip>
-                Atendimento Resolvido
+                Atención resuelta
               </q-tooltip>
             </q-icon>
             <q-icon
@@ -102,7 +102,7 @@
               size="1.8em"
               class="q-mb-sm">
               <q-tooltip>
-                ChatBot atendendo
+                ChatBot atendiendo
               </q-tooltip>
             </q-icon>
           </span>
@@ -174,7 +174,7 @@ export default {
       },
       status: {
         open: 'Aberto',
-        pending: 'Pendente',
+        pending: 'Pendiente',
         closed: 'Resolvido'
       },
       color: {
