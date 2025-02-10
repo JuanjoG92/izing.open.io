@@ -108,7 +108,7 @@ export default {
               // console.log(this.notifications)
             } catch (err) {
               console.log('error try')
-              this.$notificarErro('Algum problema', err)
+              this.$notificarErro('Algun problema', err)
               console.error(err)
             }
           }
@@ -156,7 +156,7 @@ export default {
             verify.data.tickets.forEach((element) => { pass_noti = (element.id == data.payload.id ? true : pass_noti) })
             // Exibe Notificação
             if (pass_noti) {
-              const message = new self.Notification('Novo cliente pendente', {
+              const message = new self.Notification('Nuevo cliente pendiente', {
                 body: 'Cliente: ' + data.payload.contact.name,
                 tag: 'simple-push-demo-notification'
               })
