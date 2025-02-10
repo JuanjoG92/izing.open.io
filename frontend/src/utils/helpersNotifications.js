@@ -42,7 +42,7 @@ export const notificarErro = (msg, error = null) => {
 }
 
 export const notificarSucesso = (msg) => {
-  const message = `Tudo certo... <br>${msg}.`
+  const message = `Todo muy bien... <br>${msg}.`
   Notify.create({
     type: 'positive',
     progress: true,
