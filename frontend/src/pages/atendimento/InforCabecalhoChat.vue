@@ -85,7 +85,7 @@
             :disable="cticket.status == 'closed'"
           >
             <q-tooltip content-class="bg-grey-9 text-bold">
-              Agendamento de mensagem
+              Programación de mensajes
             </q-tooltip>
           </q-btn>
 
@@ -132,7 +132,7 @@
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>Fila</q-item-label>
-                  <q-item-label caption>Retornar aos pendentes</q-item-label>
+                  <q-item-label caption>Volver a pendientes</q-item-label>
                 </q-item-section>
               </q-item>
               <q-item
@@ -169,7 +169,7 @@
         style="width: 500px"
       >
         <q-card-section>
-          <div class="text-h6">Selecione o destino:</div>
+          <div class="text-h6">Seleccione el destino:</div>
         </q-card-section>
         <q-card-section class="row q-gutter-sm">
           <div class="col-12">
@@ -276,7 +276,7 @@ export default {
         this.listarUsuarios()
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Problema ao carregar filas', error)
+        this.$notificarErro('Problema al cargar filas', error)
       }
     },
     async listarUsuarios () {
@@ -286,7 +286,7 @@ export default {
         this.modalTransferirTicket = true
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Problema ao carregar usuários', error)
+        this.$notificarErro('Problema al cargar usuarios', error)
       }
     },
     async confirmarTransferenciaTicket () {
@@ -297,7 +297,7 @@ export default {
       if (this.ticketFocado.userId === this.usuarioSelecionado && this.ticketFocado.userId != null) {
         this.$q.notify({
           type: 'info',
-          message: 'Ticket já pertece ao usuário selecionado.',
+          message: 'El ticket ya pertenece al usuario seleccionado.',
           progress: true,
           actions: [{
             icon: 'close',
@@ -310,7 +310,7 @@ export default {
       if (this.ticketFocado.userId === userId && userId === this.usuarioSelecionado) {
         this.$q.notify({
           type: 'info',
-          message: 'Ticket já pertece ao seu usuário',
+          message: 'El ticket ya pertenece a tu usuario',
           progress: true,
           actions: [{
             icon: 'close',
@@ -324,7 +324,7 @@ export default {
       if (this.ticketFocado.queueId === this.filaSelecionada && this.ticketFocado.userId === this.usuarioSelecionado) {
         this.$q.notify({
           type: 'info',
-          message: 'Ticket já pertece a esta fila e usuário',
+          message: 'El ticket ya pertenece a esta cola y usuario',
           progress: true,
           actions: [{
             icon: 'close',
