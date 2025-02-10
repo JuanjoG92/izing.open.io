@@ -62,7 +62,7 @@
             >
               <q-tooltip content-class="bg-secondary text-grey-8">
                 <div class="row col">
-                  Mensagem agendada
+                  Mensaje agendado
                 </div>
                 <div
                   class="row col"
@@ -80,7 +80,7 @@
                     color="blue-1"
                     icon="mdi-calendar-import"
                   >
-                    Criado em: {{ formatarData(mensagem.createdAt, 'dd/MM/yyyy HH:mm') }}
+                    Creado en: {{ formatarData(mensagem.createdAt, 'dd/MM/yyyy HH:mm') }}
                   </q-chip>
                 </div>
                 <div class="row col">
@@ -97,13 +97,11 @@
             Editada: {{ mensagem.edited }}
             </div>
             <div v-if="mensagem.edited" class="text-italic">
-             Mensagem anterior:<br>
+             Mensaje anterior:<br>
             </div>
-            <div
-              v-if="mensagem.isDeleted"
-              class="text-italic"
-            >
-              Mensagem apagada em {{ formatarData(mensagem.updatedAt, 'dd/MM/yyyy') }}.
+            <div v-if="mensagem.isDeleted"
+                 class="text-italic">
+              Mensaje eliminado en {{ formatarData(mensagem.updatedAt, 'dd/MM/yyyy') }}.
             </div>
             <div
               v-if="isGroupLabel(mensagem)"
@@ -147,20 +145,20 @@
                   >
                     <q-item-section>Responder</q-item-section>
                     <q-tooltip v-if=" !['whatsapp', 'telegram'].includes(ticketFocado.channel) ">
-                      Disponível apenas para WhatsApp e Telegram
+                      Sólo disponible para WhatsApp y Telegram
                     </q-tooltip>
                   </q-item>
                   <q-item
                     clickable
                     @click=" encaminharMensagem(mensagem) "
                   >
-                    <q-item-section>Encaminhar</q-item-section>
+                    <q-item-section>Reenviar</q-item-section>
                   </q-item>
                   <q-item
                     clickable
                     @click=" marcarMensagensParaEncaminhar(mensagem) "
                   >
-                    <q-item-section>Marcar (encaminhar várias)</q-item-section>
+                    <q-item-section>Marcar (rennviar varias)</q-item-section>
                   </q-item>
                   <q-item
                     @click=" AbrirmodaleditarMensagem(mensagem) "
@@ -169,7 +167,7 @@
                     :disable="ticketFocado.channel === 'messenger'"
                   >
                     <q-item-section>
-                      <q-item-label>Editar Mensagem</q-item-label>
+                      <q-item-label>Editar Mensaje</q-item-label>
                     </q-item-section>
                   </q-item>
                   <q-separator />
@@ -180,7 +178,7 @@
                     :disable=" isDesactivatDelete(mensagem) || ticketFocado.channel === 'messenger' "
                   >
                     <q-item-section>
-                      <q-item-label>Deletar</q-item-label>
+                      <q-item-label>Borrar</q-item-label>
                     </q-item-section>
                   </q-item>
                 </q-list>
@@ -332,14 +330,14 @@
 <q-dialog v-model="showModaledit">
   <q-card>
     <q-card-section>
-      <div class="text-h6">Editar Mensagem</div>
+      <div class="text-h6">Editar Mensaje</div>
     </q-card-section>
     <q-card-section>
-      <q-input filled v-model="mensagemAtual.body" label="Mensagem" />
+      <q-input filled v-model="mensagemAtual.body" label="Mensaje" />
     </q-card-section>
     <q-card-actions align="right">
       <q-btn label="Cancelar" color="negative" v-close-popup />
-      <q-btn label="Salvar" color="primary" @click="salvarMensagem" />
+      <q-btn label="Guardar" color="primary" @click="salvarMensagem" />
     </q-card-actions>
   </q-card>
 </q-dialog>
@@ -446,8 +444,8 @@ export default {
         this.showModaledit = false
         this.atualizarMensagem(updatedMessage)
       } catch (error) {
-        console.error('Erro ao editar a mensagem', error.message)
-        this.$notificarErro('Não foi possível editar a mensagem')
+        console.error('Error al editar a mensaje', error.message)
+        this.$notificarErro('No se puede editar el mensaje')
       }
     },
     atualizarMensagem (updatedMessage) {
@@ -467,7 +465,7 @@ export default {
         mensagens.splice(msgIdx, 1)
       } else {
         if (this.mensagensParaEncaminhar.length > 9) {
-          this.$notificarErro('Permitido no máximo 10 mensagens.')
+          this.$notificarErro('Permitido no máximo 10 mensajes.')
           return
         }
         mensagens.push(mensagem)
@@ -528,19 +526,19 @@ export default {
     },
     deletarMensagem (mensagem) {
       if (this.isDesactivatDelete(mensagem)) {
-        this.$notificarErro('Não foi possível apagar mensagem com mais de 5min do envio.')
+        this.$notificarErro('No se puede eliminar el mensaje más de 5 minutos después de enviarlo.')
       }
       const data = { ...mensagem }
       this.$q.dialog({
-        title: 'Atenção!! Deseja realmente deletar a mensagem? ',
-        message: 'Mensagens antigas não serão apagadas no cliente.',
+        title: '¡¡Atención!! ¿Realmente quieres eliminar el mensaje? ',
+        message: 'Los mensajes antiguos no se eliminarán en el cliente..',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -555,7 +553,7 @@ export default {
           .catch(error => {
             this.loading = false
             console.error(error)
-            this.$notificarErro('Não foi possível apagar a mensagem', error)
+            this.$notificarErro('No se puede eliminar el mensaje', error)
           })
       }).onCancel(() => {
       })
