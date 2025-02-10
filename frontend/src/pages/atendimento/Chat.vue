@@ -74,7 +74,7 @@
             'full-width': $q.screen.xs
           }"
       >
-        Selecione um ticket!
+        Selecione un ticket!
       </h1>
     </div>
     <div
@@ -154,41 +154,35 @@
         </q-item>
       </q-list>
 
-      <q-banner
-        class="text-grey-8"
-        v-if="mensagensParaEncaminhar.length > 0"
-      >
-        <span class="text-bold text-h5"> {{ mensagensParaEncaminhar.length }} de 10 mensagens</span> selecionadas para
-        serem encaminhadas.
+      <q-banner class="text-grey-8"
+                v-if="mensagensParaEncaminhar.length > 0">
+        <span class="text-bold text-h5"> {{ mensagensParaEncaminhar.length }} de 10 mensajes</span> selecionados para
+        ser reenviado.
         <q-separator class="bg-grey-4" />
-        <q-select
-          dense
-          class="q-my-md"
-          ref="selectAutoCompleteContato"
-          autofocus
-          outlined
-          rounded
-          hide-dropdown-icon
-          :loading="loading"
-          v-model="contatoSelecionado"
-          :options="contatos"
-          input-debounce="700"
-          @filter="localizarContato"
-          use-input
-          hide-selected
-          fill-input
-          clearable
-          option-label="name"
-          option-value="id"
-          label="Localize e selecione o contato"
-          hint="Digite no mínimo duas letras para localizar o contato. É possível selecionar apenas 1 contato!"
-        >
+        <q-select dense
+                  class="q-my-md"
+                  ref="selectAutoCompleteContato"
+                  autofocus
+                  outlined
+                  rounded
+                  hide-dropdown-icon
+                  :loading="loading"
+                  v-model="contatoSelecionado"
+                  :options="contatos"
+                  input-debounce="700"
+                  @filter="localizarContato"
+                  use-input
+                  hide-selected
+                  fill-input
+                  clearable
+                  option-label="name"
+                  option-value="id"
+                  label="Localize e selecione o contato"
+                  hint="Introduzca al menos dos letras para encontrar el contacto. Es posible seleccionar solo 1 contacto!">
           <template v-slot:option="scope">
-            <q-item
-              v-bind="scope.itemProps"
-              v-on="scope.itemEvents"
-              v-if="scope.opt.name"
-            >
+            <q-item v-bind="scope.itemProps"
+                    v-on="scope.itemEvents"
+                    v-if="scope.opt.name">
               <q-item-section>
                 <q-item-label> {{ scope.opt.name }}</q-item-label>
                 <q-item-label caption>{{ scope.opt.number }}</q-item-label>
@@ -197,21 +191,17 @@
           </template>
         </q-select>
         <template v-slot:action>
-          <q-btn
-            class="bg-padrao q-px-sm"
-            flat
-            color="negative"
-            label="Cancelar"
-            @click="cancelarMultiEncaminhamento"
-          />
-          <q-btn
-            class="bg-padrao q-px-sm"
-            flat
-            color="positive"
-            label="Enviar"
-            icon="mdi-send"
-            @click="confirmarEncaminhamentoMensagem(mensagensParaEncaminhar)"
-          />
+          <q-btn class="bg-padrao q-px-sm"
+                 flat
+                 color="negative"
+                 label="Cancelar"
+                 @click="cancelarMultiEncaminhamento" />
+          <q-btn class="bg-padrao q-px-sm"
+                 flat
+                 color="positive"
+                 label="Enviar"
+                 icon="mdi-send"
+                 @click="confirmarEncaminhamentoMensagem(mensagensParaEncaminhar)" />
         </template>
       </q-banner>
 
@@ -230,7 +220,7 @@
       <q-card :style="$q.screen.width < 770 ? `min-width: 98vw; max-width: 98vw` : 'min-width: 50vw; max-width: 50vw'">
         <q-card-section>
           <div class="text-h6">
-            Agendamento de Mensagem
+            Programación de Mensajes
             <q-btn
               flat
               class="bg-padrao btn-rounded float-right"
@@ -296,8 +286,8 @@
             clearable
             option-label="name"
             option-value="id"
-            label="Localize e selecione o contato"
-            hint="Digite no mínimo duas letras para localizar o contato. É possível selecionar apenas 1 contato!"
+            label="Localiza y selecciona el contacto"
+            hint="Introduzca al menos dos letras para encontrar el contacto. Es posible seleccionar solo 1 contacto!"
           >
             <template v-slot:option="scope">
               <q-item
@@ -467,17 +457,17 @@ export default {
     },
     confirmarEncaminhamentoMensagem (data) {
       if (!this.contatoSelecionado.id) {
-        this.$notificarErro('Selecione o contato de destino das mensagens.')
+        this.$notificarErro('Seleccione el contacto de destino para los mensajes.')
         return
       }
       EncaminharMensagem(data, this.contatoSelecionado)
         .then(r => {
-          this.$notificarSucesso(`Mensagem encaminhada para ${this.contatoSelecionado.name} | Número: ${this.contatoSelecionado.number}`)
+          this.$notificarSucesso(`Mensaje reenviado a ${this.contatoSelecionado.name} | Número: ${this.contatoSelecionado.number}`)
           this.mensagensParaEncaminhar = []
           this.ativarMultiEncaminhamento = false
         })
         .catch(e => {
-          this.$notificarErro('Não foi possível encaminhar mensagem. Tente novamente em alguns minutos!', e)
+          this.$notificarErro('No se puede reenviar el mensaje. ¡Inténtalo de nuevo en unos minutos!', e)
         })
     }
   },
