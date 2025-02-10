@@ -29,8 +29,8 @@
           fill-input
           option-label="name"
           option-value="id"
-          label="Localizar Contato"
-          hint="Digite no mínimo duas letras para localizar o contato."
+          label="Localizar Contacto"
+          hint="Introduzca al menos dos letras para encontrar el contacto."
         >
           <template v-slot:before-options>
             <q-btn
@@ -154,7 +154,7 @@ export default {
         await this.$store.commit('SET_HAS_MORE', true)
         await this.$store.dispatch('AbrirChatMensagens', ticket)
         this.$q.notify({
-          message: `Atendimento Iniciado || ${ticket.contact.name} - Ticket: ${ticket.id}`,
+          message: `Atención Iniciada || ${ticket.contact.name} - Ticket: ${ticket.id}`,
           type: 'positive',
           progress: true,
           position: 'top',
@@ -170,7 +170,7 @@ export default {
         }
       } catch (error) {
         console.error(error)
-        this.$notificarErro('Ocorreu um erro ao iniciar o atendimento!', error)
+        this.$notificarErro('¡Se produjo un error al iniciar la atención', error)
       }
       this.loading = false
     }
