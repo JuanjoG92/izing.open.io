@@ -1,8 +1,8 @@
-<template>
+﻿<template>
   <div v-if="userProfile === 'admin'">
     <q-card bordered>
       <q-card-section>
-        <div class="text-h6 q-px-sm"> Relatório de Contatos por Etiquetas </div>
+        <div class="text-h6 q-px-sm"> Informe de contactos por etiquetas </div>
       </q-card-section>
       <q-card-section class="q-pt-none">
         <fieldset class="rounded-all">
@@ -62,7 +62,7 @@
                 class="q-mr-sm"
                 color="primary"
                 rounded
-                label="Gerar"
+                label="Generar"
                 icon="refresh"
                 @click="gerarRelatorio"
               />
@@ -132,7 +132,7 @@
     <ccPrintModelLandscape
       id="slotTableRelatorioContatos"
       :imprimirRelatorio="imprimir"
-      title="Relatório de Contatos por Etiquetas"
+      title="Informe de contactos por etiquetas"
       :styleP="`
       table { width: 100%; font-size: 10px; border-spacing: 1; border-collapse: collapse;  }
       #tableReport tr td { border:1px solid #DDD; padding-left: 10px; padding-right: 10px;  }
@@ -203,7 +203,7 @@ export default {
       contatos: [],
       etiquetas: [],
       columns: [
-        { name: 'name', label: 'Nome', field: 'name', align: 'left', style: 'width: 300px', format: v => this.replaceEmojis(v) },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left', style: 'width: 300px', format: v => this.replaceEmojis(v) },
         { name: 'number', label: 'WhatsApp', field: 'number', align: 'center', style: 'width: 300px' },
         { name: 'email', label: 'Email', field: 'email', style: 'width: 500px', align: 'left' },
         {
@@ -272,7 +272,7 @@ export default {
     },
     async gerarRelatorio () {
       if (!this.pesquisa.tags.length) {
-        this.$notificarErro('Ops... Para gerar o relatório, é necessário selecionar pelo menos uma etiqueta.')
+        this.$notificarErro('Ops... Para generar el informe, debe seleccionar al menos una etiqueta.')
         return
       }
       const { data } = await RelatorioContatos(this.pesquisa)
