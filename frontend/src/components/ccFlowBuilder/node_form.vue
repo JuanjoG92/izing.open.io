@@ -5,14 +5,14 @@
         rounded
         color="primary"
         icon="mdi-plus"
-        label="Nova Etapa"
+        label="Nueva Etapa"
         @click="addNode"
       />
       <q-btn
         rounded
         color="positive"
         icon="mdi-content-save-outline"
-        label="Salvar"
+        label="Guardar"
         @click="$emit('saveFlow')"
       />
     </div>
@@ -22,13 +22,13 @@
       class="fit"
     >
       <div class="ef-node-form-header">
-        Configuração Fluxo
+        Configuración de Flujo
       </div>
       <div class="q-pa-sm">
         <q-input
           outlined
           rounded
-          label="Nome"
+          label="Nombre"
           v-model="node.name"
           class="q-my-sm"
           :disable="['start', 'configurations'].includes(node.type)"
@@ -47,11 +47,11 @@
           >
             <q-tab
               name="interacoes"
-              label="Interações"
+              label="Interacciones"
             />
             <q-tab
               name="condicoes"
-              label="Condições"
+              label="Condiciones"
             />
 
           </q-tabs>
@@ -76,7 +76,7 @@
                     @click="addMessage"
                   >
                     <q-tooltip content-class="text-bold">
-                      Enviar Mensagem
+                      Enviar Mensaje
                     </q-tooltip>
                   </q-btn>
 
@@ -88,7 +88,7 @@
                     :color="$q.dark.isActive ? 'white' : ''"
                   >
                     <q-tooltip content-class="text-bold">
-                      Enviar documentos, vídeo, aúdio e outros arquivos.
+                      Enviar documentos, vídeo, aúdio y otros archivos.
                     </q-tooltip>
                   </q-btn>
                 </div>
@@ -176,11 +176,11 @@
                     class="bg-padrao btn-rounded q-mx-xs"
                     :color="$q.dark.isActive ? 'white' : ''"
                     @click="addCondiction"
-                    label="Nova"
+                    label="Nueva"
                     rounded
                   >
                     <q-tooltip content-class="text-bold">
-                      Nova condição
+                      Nueva condición
                     </q-tooltip>
                   </q-btn>
                 </div>
@@ -217,7 +217,7 @@
                           @click="changePosition(node.conditions, idx, idx - 1)"
                         >
                           <q-tooltip>
-                            Reordenar: Aumentar prioridade da regra de condição
+                            Reordenar: Aumentar prioridad de la regla de condición
                           </q-tooltip>
                         </q-btn>
                         <q-btn
@@ -231,7 +231,7 @@
                           @click="changePosition(node.conditions, idx, idx + 1)"
                         >
                           <q-tooltip>
-                            Reordenar: Diminuir prioridade da regra de condição
+                            Reordenar: Diminuir prioridad de la regla de condición
                           </q-tooltip>
                         </q-btn>
                         <q-btn
@@ -269,7 +269,7 @@
                           hide-dropdown-icon
                           input-debounce="0"
                           new-value-mode="add-unique"
-                          hint="Digite o valor e aperte enter"
+                          hint="Digite un valor y presione enter"
                         />
                       </q-card-section>
                       <q-separator
@@ -353,7 +353,7 @@
           >
             <q-input
               outlined
-              label="Chave"
+              label="Clave"
               v-model="line.label"
             />
             <q-btn
@@ -364,7 +364,7 @@
               type="primary"
               icon="mdi-content-save"
               @click="saveLine"
-              label="Salvar"
+              label="Guardar"
             />
           </div>
         </div>
@@ -382,8 +382,8 @@
           <div class="full-width bg-grey-3 text-bold row col justify-between text-left q-pa-md">
             Mensagem de saudação (Fila/Usuário)
             <div class="row text-subtitle2">
-              Quando o bot direcionar o atendimento para uma fila ou usuário,
-              essa mensagem será enviada.
+              Cuando el bot dirige el servicio a una cola o usuario,
+              Este mensaje será enviado.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -392,7 +392,7 @@
                 <label
                   class="text-subtitle1 text-bold q-mb-sm"
                   for="inputEnvioMensagem"
-                > Mensagem: </label>
+                > Mensaje: </label>
                 <div class="flex flex-inline full-width items-center">
                   <div
                     class="flex flex-inline text-left"
@@ -449,10 +449,10 @@
           style="height: 300px;"
         >
           <div class="full-width bg-grey-3 text-bold row col justify-between text-left q-pa-md">
-            Se nenhuma resposta esperada for enviada
+            Si no se envía la respuesta esperada
             <div class="row text-subtitle2">
-              Essa exceção será aplicada caso a resposta enviada pelo cliente não corresponda
-              aos valores esperados conforme condições da etapa.
+              Esta excepción se aplicará si la respuesta enviada por el cliente no coincide
+              a los valores esperados según las condiciones del escenario.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -461,7 +461,7 @@
                 <label
                   class="text-subtitle1 text-bold q-mb-sm"
                   for="inputEnvioMensagem"
-                > Mensagem de feedback: </label>
+                > Mensaje de feedback: </label>
                 <div class="flex flex-inline full-width items-center">
                   <div
                     class="flex flex-inline text-left"
@@ -519,10 +519,10 @@
           style="height: 290px;"
         >
           <div class="full-width bg-grey-3 text-bold text-body1 row col justify-between text-left q-pa-md">
-            Ausência de resposta
+            Ausencia de respuesta
             <div class="row text-subtitle2">
-              Após o tempo determinado, se o cliente não responder,
-              o bot realizará o encaminhamento para a Fila/Usuário informados.
+              Después del tiempo especificado, si el cliente no responde,
+              El bot reenviará el mensaje a la cola/usuario proporcionado.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -594,11 +594,11 @@
           style="height: 330px;"
         >
           <div class="full-width bg-grey-3 text-bold text-body1 row col justify-between text-left q-pa-md">
-            Máximo de Tentativas do Bot
+            Máximo de intentos del Bot
             <div class="row text-subtitle2">
-              Uma vez excedido o número máximo de retentativas de pergunta/resposta,
-              caso o cliente não envie uma respota válida, o bot irá realizar o encaminhamento
-              para a Fila/Usuário configurados.
+              Una vez superado el número máximo de reintentos de preguntas y respuestas,
+              si el cliente no envía una respuesta válida, el bot reenviará el mensaje
+              para la cola/usuario configurado.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -610,7 +610,7 @@
                   outlined
                   mask="##"
                   v-model.number="node.configurations.maxRetryBotMessage.number"
-                  label="Número de tentativas"
+                  label="Número de intentos"
                 />
               </div>
             </div>
@@ -622,7 +622,7 @@
                   v-model="node.configurations.maxRetryBotMessage.type"
                   :options="[
                     { value: 1, label: 'Fila' },
-                    { value: 2, label: 'Usuário' }
+                    { value: 2, label: 'Usuario' }
                   ]"
                   color="primary"
                 />
@@ -670,12 +670,12 @@
           style="height: 330px;"
         >
           <div class="full-width bg-grey-3 text-bold text-body1 row col justify-between text-left q-pa-md">
-            Auto Distribuir Atendimento
+            Auto Distribuir Atención
             <div class="row text-subtitle2">
-              Não: Desativado. <br />
-              Balancear: Definirá o usuário com base na quantidade de atendimentos de cada usuário da fila. Usuário com
-              menos atendimentos será escolhido.<br />
-              Aleatória: Definirá o usuário de forma aleatória/randômica para os usuários da fila.
+              No: Desativado. <br />
+              Balancear: Definirá el agente de atención en base a la cantidad de atenciones de cada usuario en fila. El agente con
+              menos atenciones será elegido.<br />
+              Aleatoria: Definirá el agente de forma aleatoria para los usuarios de la fila.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -686,8 +686,8 @@
                   inline
                   v-model="node.configurations.autoDistributeTickets"
                   :options="[
-                    { value: 'N', label: 'Não' },
-                    { value: 'R', label: 'Aleatória' },
+                    { value: 'N', label: 'No' },
+                    { value: 'R', label: 'Aleatoria' },
                     { value: 'B', label: 'Balanceada' }
                   ]"
                   color="primary"
@@ -704,7 +704,7 @@
           <div class="full-width bg-grey-3 text-bold text-body1 row col justify-between text-left q-pa-md">
             Encerrar Atendimento
             <div class="row text-subtitle2">
-              Caso o cliente digite algumas das informações esperadas, o atendimento será encerrado.
+              Si el cliente ingresa alguno de los datos esperados, la atención será cancelada.
             </div>
           </div>
           <q-card-section class="q-pa-sm">
@@ -712,7 +712,7 @@
               <div class="col">
                 <q-select
                   dense
-                  label="Parâmetros"
+                  label="Parametros"
                   outlined
                   rounded
                   v-model="node.configurations.answerCloseTicket"
@@ -722,7 +722,7 @@
                   hide-dropdown-icon
                   input-debounce="0"
                   new-value-mode="add-unique"
-                  hint="Digite o valor e aperte enter"
+                  hint="Digite un valor y presione enter"
                 />
               </div>
             </div>
@@ -738,16 +738,16 @@
       >
         <q-card class="full-width q-my-sm">
           <div class="full-width bg-grey-3 text-bold row col justify-between text-left q-pa-md">
-            Etapa representa o contato inicial.
+            Ésta etapa representa el contacto inicial.
             <div class="row text-subtitle2">
-              - Caso seja o primeiro contato do cliente, o sistema
-              salvará automaticamente na agenda as informações do cliente.
+              - Si es el primer contacto del cliente, el sistema
+              guardará automáticamente la información del cliente en el calendario.
             </div>
             <div class="row text-subtitle2">
-              - O Bot irá interagir nos atendimentos iniciados pelos clientes.
+              - El bot interactuará con las atenciones iniciadas por el cliente.
             </div>
             <div class="row text-subtitle2">
-              - O Bot irá parar de interagir caso o atendimento seja assumido por um usuário.
+              - El bot dejará de interactuar si un usuario toma el control del servicio.
             </div>
           </div>
         </q-card>
@@ -790,11 +790,11 @@ export default {
       optionsAcao: [
         { value: 0, label: 'Etapa' },
         { value: 1, label: 'Fila' },
-        { value: 2, label: 'Usuário' }
+        { value: 2, label: 'Usuario' }
       ],
       optionsSe: [
-        { label: 'Qualquer resposta', value: 'US' },
-        { label: 'Respostas', value: 'R' }
+        { label: 'Cualquier respuesta', value: 'US' },
+        { label: 'Respuesta específica', value: 'R' }
       ],
       type: 'node',
       node: {},
@@ -802,16 +802,16 @@ export default {
       data: {},
       stateList: [{
         state: 'success',
-        label: '成功'
+        label: 'Éxito'
       }, {
         state: 'warning',
-        label: '警告'
+        label: 'Advertencia'
       }, {
         state: 'error',
-        label: '错误'
+        label: 'Error'
       }, {
         state: 'running',
-        label: '运行中'
+        label: 'En ejecución'
       }]
     }
   },
@@ -855,7 +855,7 @@ export default {
       const nodeMenu = {
         id: this.gerarUID(),
         nodeId: this.gerarUID(),
-        name: 'Nova etapa',
+        name: 'Nueva etapa',
         type: 'node',
         left: '100px',
         top: '40px',
@@ -874,15 +874,15 @@ export default {
     },
     removeConditionItem (condition, idx) {
       this.$q.dialog({
-        title: 'Atenção!!',
-        message: `Deseja realmente deletar a condição (${idx + 1})?`,
+        title: 'Atención!!',
+        message: `Desea realmente eliminar la condición (${idx + 1})?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -942,14 +942,14 @@ export default {
     removeItem (el, idx) {
       this.$q.dialog({
         title: 'Atenção!!',
-        message: `Deseja realmente deletar o elemento (${idx})?`,
+        message: `Desea realmente eliminar el elemento (${idx})?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
