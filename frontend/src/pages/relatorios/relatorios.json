@@ -1,27 +1,27 @@
-﻿  [
+  [
     {
       "name": "lista-contatos",
       "titulo": "Contactos",
-      "objetivo": "Apresenta todos os contatos cadastratos"
+      "objetivo": "Muestra todos los contactos registrados"
     },
     {
       "name": "contatos-por-etiquetas",
-      "titulo": "Contatos por Etiqueta",
-      "objetivo": "Apresenta os contatos que foram sinalizados com a etiqueta filtrada."
+      "titulo": "Contactos por Etiqueta",
+      "objetivo": "Muestra los contactos que han sido marcados con la etiqueta filtrada."
     },
     {
       "name": "contatos-por-estado",
       "titulo": "Contactos por Provincia",
-      "objetivo": "Apresenta os contatos separados por estado (considera o DDD)."
+      "objetivo": "Muestra los contactos separados por Provincia (considera la caracterisca)."
     },
     {
       "name": "estatisticas-atendimentos-usuarios",
       "titulo": "Resumen de Atenciones por Usurios",
-      "objetivo": "Apresenta o resumo dos atendimentos por usuários."
+      "objetivo": "Presenta un resumen de las atenciones prestadas por los usuarios/agentes."
     },
     {
       "name": "relatorio-tickets",
       "titulo": "Informe de tickets",
-      "objetivo": "Apresenta relatorios de tickets com varias filtragem."
+      "objetivo": "Presenta informes de tickets con varios filtros."
     }
   ]
