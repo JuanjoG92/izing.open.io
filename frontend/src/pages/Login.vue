@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-layout class="vertical-center">
     <q-page-container>
       <q-page class="flex justify-center items-center">
