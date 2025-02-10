@@ -22,8 +22,8 @@
             <q-separator spaced />
           </q-card-section>
           <q-card-section class="text-primary">
-            <div class="text-h6">Bem vindo!</div>
-            <div class="text-caption text-grey">Faça login...</div>
+            <div class="text-h6">Bienvenido!</div>
+            <div class="text-caption text-grey">Iniciar Sesión...</div>
           </q-card-section>
 
           <q-card-section>
@@ -32,10 +32,10 @@
               clearable
               rounded
               v-model="form.email"
-              placeholder="meu@email.com"
+              placeholder="su@email.com"
               @blur="$v.form.email.$touch"
               :error="$v.form.email.$error"
-              error-message="Deve ser um e-mail válido."
+              error-message="Debe ingresar un e-mail válido."
               outlined
               @keypress.enter="fazerLogin"
             >
@@ -93,7 +93,7 @@
             no-caps
             dense
             class="q-px-sm"
-            label="Esqueci a senha"
+            label="Escribe contraseña"
             @click="modalEsqueciSenha=true"
           /> -->
 
