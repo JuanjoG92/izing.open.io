@@ -1,7 +1,7 @@
 <template>
   <div v-if="userProfile === 'admin'">
     <div class="row col q-pa-md justify-between items-center">
-      <h1> Painel Atendimentos </h1>
+      <h1> Panel de Atenciones </h1>
       <q-btn color="primary"
         icon="mdi-filter"
         label="Filtros"
@@ -53,7 +53,7 @@
         </q-card-section>
         <q-card-section>
           <q-separator />
-          <div class="text-h6 q-mt-md">Tipo de visualização</div>
+          <div class="text-h6 q-mt-md">Tipo de visualización</div>
           <q-option-group :options="optionsVisao"
             label="Visão"
             type="radio"
@@ -84,7 +84,7 @@
               <q-item v-if="visao === 'U' || visao === 'US'"
                 class="text-bold"
                 :class="{
-                  'bg-negative text-white': definirNomeUsuario(item[0]) === 'Pendente'
+                  'bg-negative text-white': definirNomeUsuario(item[0]) === 'Pendiente'
                 }">
                 <!-- <q-item-section avatar>
                   <q-avatar>
@@ -95,9 +95,9 @@
                   <q-item-label class="text-bold text-h6">{{ definirNomeUsuario(item[0]) }}</q-item-label>
                   <q-item-label caption
                     :class="{
-                      'text-white': definirNomeUsuario(item[0]) === 'Pendente'
+                      'text-white': definirNomeUsuario(item[0]) === 'Pendiente'
                     }">
-                    Atendimentos: {{ item.length }}
+                    Atenciones: {{ item.length }}
                   </q-item-label>
                 </q-item-section>
               </q-item>
@@ -105,7 +105,7 @@
               <q-item v-if="visao === 'F' || visao === 'FS'"
                 class="text-bold"
                 :class="{
-                  'bg-negative text-white': definirNomeFila(item[0]) === 'Sem Fila'
+                  'bg-negative text-white': definirNomeFila(item[0]) === 'Sin Fila'
                 }">
                 <q-item-section avatar>
                   <q-avatar>
@@ -116,9 +116,9 @@
                   <q-item-label>{{ definirNomeFila(item[0]) }}</q-item-label>
                   <q-item-label caption
                     :class="{
-                      'text-white': definirNomeFila(item[0]) === 'Sem Fila'
+                      'text-white': definirNomeFila(item[0]) === 'Sin Fila'
                     }">
-                    Abertos: {{ counterStatus(item).open }} | Pendentes: {{ counterStatus(item).pending }} | Total: {{
+                    Abiertos: {{ counterStatus(item).open }} | Pendientes: {{ counterStatus(item).pending }} | Total: {{
                         item.length
                     }}
                   </q-item-label>
@@ -322,11 +322,11 @@ export default {
     },
     definirNomeUsuario (item) {
       this.verifyIsActionSocket(item)
-      return item?.user?.name || 'Pendente'
+      return item?.user?.name || 'Pendiente'
     },
     definirNomeFila (f) {
       const fila = this.filas.find(fila => fila.id === f.queueId)
-      return fila?.queue || 'Sem Fila'
+      return fila?.queue || 'Sin Fila'
     },
     counterStatus (tickets) {
       const status = {
@@ -348,7 +348,7 @@ export default {
         })
         .catch(error => {
           console.error(error)
-          this.$notificarErro('Erro ao consultar atendimentos', error)
+          this.$notificarErro('Error al consultar la atención', error)
         })
     },
     onResize ({ height }) {
