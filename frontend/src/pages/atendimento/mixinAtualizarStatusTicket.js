@@ -9,7 +9,7 @@ export default {
         .then(res => {
           this.loading = false
           this.$q.notify({
-            message: `Atendimento Iniciado || ${ticket.name} - Ticket: ${ticket.id}`,
+            message: `Atención Iniciada || ${ticket.name} - Ticket: ${ticket.id}`,
             type: 'positive',
             progress: true,
             position: 'top',
@@ -26,7 +26,7 @@ export default {
         .catch(error => {
           this.loading = false
           console.error(error)
-          this.$notificarErro('Não foi possível atualizar o status', error)
+          this.$notificarErro('No se puede actualizar el estado', error)
         })
     },
     espiarAtendimento (ticket) {
@@ -52,33 +52,33 @@ export default {
         .catch(error => {
           this.loading = false
           console.error(error)
-          this.$notificarErro('Não foi possível atualizar o status', error)
+          this.$notificarErro('No se puede actualizar el estado', error)
         })
     },
     atualizarStatusTicket (status) {
       const contatoName = this.ticketFocado.contact.name || ''
       const ticketId = this.ticketFocado.id
       const title = {
-        open: 'Atenidmento será iniciado, ok?',
-        pending: 'Retornar à fila?',
-        closed: 'Encerrar o atendimento?'
+        open: 'La atención será iniciada, ok?',
+        pending: '¿Volver a la cola?',
+        closed: 'finalizar atención?'
       }
       const toast = {
-        open: 'Atenidmento iniciado!',
-        pending: 'Retornado à fila!',
-        closed: 'Atendimento encerrado!'
+        open: 'Atención iniciada!',
+        pending: 'Regreso a la cola!',
+        closed: 'Atención cerrada!'
       }
 
       this.$q.dialog({
         title: title[status],
         message: `Cliente: ${contatoName} || Ticket: ${ticketId}`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'negative',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'primary',
           push: true
         },
@@ -104,7 +104,7 @@ export default {
           .catch(error => {
             this.loading = false
             console.error(error)
-            this.$notificarErro('Não foi possível atuaizar o status', error)
+            this.$notificarErro('No se puede actualizar el estado', error)
           })
       })
     }
