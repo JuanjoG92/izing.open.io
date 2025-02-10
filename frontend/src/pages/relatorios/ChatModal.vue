@@ -1,7 +1,7 @@
-<template>
+﻿<template>
   <q-dialog v-model="showModal" persistent>
     <q-card :style="modalStyle">
-      <!-- Informações do contato na parte superior -->
+      <!-- Información de contacto en la parte superior -->
       <q-card-section>
         <div class="contact-info">
           <strong>Ticket:</strong> {{ ticketId }}<br />
@@ -24,7 +24,7 @@
           >
             <div class="message-meta">
               <strong>
-                {{ mensagem.sendType === 'bot' ? 'Bot' : (mensagem.fromMe ? 'Atendente' : mensagem.from) }}
+                {{ mensagem.sendType === 'bot' ? 'Bot' : (mensagem.fromMe ? 'Asistente' : mensagem.from) }}
               </strong>&nbsp;&nbsp;
               <span>{{ formatarData(mensagem.createdAt) }}</span>
             </div>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div v-else>
-          <p>Nenhuma mensagem encontrada.</p>
+          <p>No se encontraron mensajes.</p>
         </div>
       </q-card-section>
 
@@ -115,7 +115,7 @@ export default {
           }
         }
       } catch (error) {
-        console.error('Erro ao carregar mensagens:', error)
+        console.error('Error al cargar mensajes:', error)
       }
     },
     formatarData (data) {
@@ -163,7 +163,7 @@ export default {
   margin-bottom: 10px;
 }
 
-/* Estilos para o histórico de mensagens */
+/* Estilos para el historial de mensajes*/
 .chat-history {
   display: flex;
   flex-direction: column;
@@ -171,14 +171,14 @@ export default {
   overflow-y: auto;
 }
 
-/* Container das mensagens */
+/* Contenedor de mensajes */
 .messages-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Estilos para mensagens */
+/* Estilos para mensajes */
 .chat-message {
   padding: 10px;
   border-radius: 10px;
@@ -187,21 +187,21 @@ export default {
   font-size: 1em;
 }
 
-/* Mensagens enviadas pelo usuário (direita) */
+/* Mensajes enviados por el usuario (derecha) */
 .from-me {
   background-color: #007bff;
   color: white;
   align-self: flex-end;
 }
 
-/* Mensagens enviadas pelo cliente (esquerda) */
+/* Mensajes enviados por el cliente (izquierda) */
 .from-them {
   background-color: #f1f1f1;
   color: black;
   align-self: flex-start;
 }
 
-/* Metadados da mensagem (remetente e data) */
+/* Metadatos del mensaje (remitente y fecha) */
 .message-meta {
   display: flex;
   justify-content: space-between;
@@ -209,21 +209,21 @@ export default {
   margin-bottom: 5px;
 }
 
-/* Corpo da mensagem */
+/* Cuerpo del mensaje */
 .message-body {
   font-size: 1em;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
-/* Botão de carregar mais mensagens */
+/* Botón para cargar más mensajes */
 .load-more-container {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
 }
 
-/* Ajustes para o botão de fechar */
+/* Ajustes para el botón de cierre */
 .q-card-actions {
   margin-top: 10px;
 }
