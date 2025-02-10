@@ -158,7 +158,7 @@ export default {
         this.$store.commit('LOAD_TICKETS', { type: this.status, tickets: data.tickets })
         this.hasMore = data.hasMore
       } catch (err) {
-        this.$notificarErro('Algum problema', err)
+        this.$notificarErro('Algun problema', err)
         console.error(err)
       }
       // return () => clearTimeout(delayDebounceFn)
