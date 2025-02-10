@@ -1,7 +1,7 @@
-  [
+﻿  [
     {
       "name": "lista-contatos",
-      "titulo": "Contatos",
+      "titulo": "Contactos",
       "objetivo": "Apresenta todos os contatos cadastratos"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "relatorio-tickets",
-      "titulo": "Relatório dos tickets",
+      "titulo": "Informe de tickets",
       "objetivo": "Apresenta relatorios de tickets com varias filtragem."
     }
   ]
