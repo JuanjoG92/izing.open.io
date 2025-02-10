@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div>
     <q-table
       flat
@@ -6,7 +6,7 @@
       square
       hide-bottom
       class="my-sticky-dynamic q-ma-lg"
-      title="Mensagens Rápidas"
+      title="Respuestas Rápidas"
       :data="mensagensRapidas"
       :columns="columns"
       :loading="loading"
@@ -17,7 +17,7 @@
       <template v-slot:top-right>
         <q-btn
           color="primary"
-          label="Adicionar"
+          label="Agregar"
           rounded
           @click="mensagemRapidaEmEdicao = {}; modalMensagemRapida = true"
         />
@@ -71,9 +71,9 @@ export default {
       mensagemRapidaEmEdicao: {},
       columns: [
         { name: 'id', label: '#', field: 'id', align: 'left' },
-        { name: 'key', label: 'Chave', field: 'key', align: 'left' },
-        { name: 'message', label: 'Mensagem', field: 'message', align: 'left' },
-        { name: 'acoes', label: 'Ações', field: 'acoes', align: 'center' }
+        { name: 'key', label: 'Clave', field: 'key', align: 'left' },
+        { name: 'message', label: 'Mensaje', field: 'message', align: 'left' },
+        { name: 'acoes', label: 'Acciones', field: 'acoes', align: 'center' }
 
       ],
       pagination: {
