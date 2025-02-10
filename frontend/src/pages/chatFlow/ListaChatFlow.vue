@@ -7,7 +7,7 @@
           flat
           bordered
           class="my-sticky-dynamic q-ma-lg"
-          title="Fluxos"
+          title="Flujos"
           hide-bottom
           :data="listachatFlow"
           :columns="columns"
@@ -20,7 +20,7 @@
             <q-btn
               class="q-ml-md"
               color="primary"
-              label="Adicionar"
+              label="Agregar"
               rounded
               @click="chatFlowSelecionado = {}; modalChatFlow = true"
             />
@@ -47,7 +47,7 @@
                 @click="editFlow(props.row)"
               >
                 <q-tooltip>
-                  Editar informações
+                  Editar información
                 </q-tooltip>
               </q-btn>
               <q-btn
@@ -59,7 +59,7 @@
                 @click="duplicarFluxo(props.row)"
               >
                 <q-tooltip>
-                  Duplicar Fluxo
+                  Duplicar Flujo
                 </q-tooltip>
               </q-btn>
               <q-btn
@@ -71,7 +71,7 @@
                 @click="abrirFluxo(props.row)"
               >
                 <q-tooltip>
-                  Abrir Fluxo
+                  Abrir Flujo
                 </q-tooltip>
               </q-btn>
               <q-btn
@@ -83,7 +83,7 @@
                 @click="deletarFluxo(props.row)"
               >
                 <q-tooltip>
-                  Excluir
+                  Eliminar
                 </q-tooltip>
               </q-btn>
             </q-td>
@@ -104,7 +104,7 @@
     >
       <q-card style="min-width: 350px">
         <q-card-section>
-          <div class="text-h6">Você tem certeza que dessa escluir esse fluxo?</div>
+          <div class="text-h6">¿Estás seguro que deseas eliminar este flujo?</div>
           <div>{{ chatFlowSelecionado.name }}</div>
         </q-card-section>
         <q-card-actions
@@ -119,7 +119,7 @@
           />
           <q-btn
             flat
-            label="Excluir"
+            label="Eliminar"
             color="negative"
             v-close-popup
             @click="confirmDeleteFoo()"
@@ -157,9 +157,9 @@ export default {
       },
       loading: false,
       columns: [
-        { name: 'name', label: 'Nome', field: 'name', align: 'left' },
-        { name: 'isActive', label: 'Status', field: 'isActive', align: 'center' },
-        { name: 'celularTeste', label: 'Celular Teste', field: 'celularTeste', align: 'center' },
+        { name: 'name', label: 'Nombre', field: 'name', align: 'left' },
+        { name: 'isActive', label: 'Estado', field: 'isActive', align: 'center' },
+        { name: 'celularTeste', label: 'Celular de prueba', field: 'celularTeste', align: 'center' },
         { name: 'acoes', label: '', field: 'acoes', align: 'center' }
       ],
       filas: [],
