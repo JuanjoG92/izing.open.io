@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <q-dialog
     persistent
     :value="modalMensagemRapida"
@@ -9,7 +9,7 @@
       :style="$q.screen.width < 500 ? 'width: 95vw' : 'min-width: 700px; max-width: 700px'"
       class="q-pa-lg"
     >
-      <div class="text-h6">{{ mensagemRapida.id ? 'Editar': 'Criar' }} Mensagem Rápida {{ mensagemRapida.id  ? `(ID: ${mensagemRapida.id})` : '' }}</div>
+      <div class="text-h6">{{ mensagemRapida.id ? 'Editar': 'Crear' }} Mensaje rápido{{ mensagemRapida.id  ? `(ID: ${mensagemRapida.id})` : '' }}</div>
       <q-card-section class="q-pa-none">
         <div class="row q-my-md">
           <div class="col">
@@ -19,10 +19,10 @@
               rounded
               dense
               v-model="mensagemRapida.key"
-              label="Chave"
+              label="Clave"
             />
             <p style="margin-left: 62px; font-size: 10px; margin-top: 3px;">
-              A chave é o atalho para pesquisa da mensagem pelos usuários.
+              La clave es el acceso directo para que los usuarios busquen el mensaje.
             </p>
           </div>
         </div>
@@ -57,12 +57,12 @@
             </q-btn>
           </div>
           <div class="col-xs-8 col-sm-10 col-md-11 q-pl-sm">
-            <label class="text-caption">Mensagem:</label>
+            <label class="text-caption">Mensaje:</label>
             <textarea
               ref="inputEnvioMensagem"
               style="min-height: 15vh; max-height: 15vh;"
               class="q-pa-sm bg-white full-width rounded-all"
-              placeholder="Digite a mensagem"
+              placeholder="Introduce el mensaje"
               autogrow
               dense
               outlined
@@ -85,7 +85,7 @@
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           color="positive"
           @click="handleMensagemRapida"
         />
@@ -168,7 +168,7 @@ export default {
             progress: true,
             position: 'top',
             textColor: 'black',
-            message: 'Mensagem Rápida editada!',
+            message: 'Mensaje rápido editado!',
             actions: [{
               icon: 'close',
               round: true,
@@ -182,7 +182,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: 'Mensagem rápida criada!',
+            message: 'Mensaje rápido creado!',
             actions: [{
               icon: 'close',
               round: true,
