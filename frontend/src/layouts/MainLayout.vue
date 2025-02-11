@@ -382,7 +382,7 @@ const superMenu = [
     routeName: 'usuariossuper'
   },
   {
-    title: 'Canales',
+    title: 'Conexiones',
     caption: 'Canales de Comunicación',
     icon: 'mdi-cellphone-wireless',
     routeName: 'sessaosuper'
