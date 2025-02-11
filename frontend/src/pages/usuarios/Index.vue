@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <q-table
       class="my-sticky-dynamic q-ma-lg"
@@ -20,7 +20,7 @@
           debounce="500"
           v-model="filter"
           clearable
-          placeholder="Localizar"
+          placeholder="Buscar.."
           @input="filtrarUsuario"
         >
           <template v-slot:prepend>
