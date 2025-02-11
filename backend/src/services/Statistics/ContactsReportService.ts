@@ -141,7 +141,7 @@ const ListContactsService = async ({
     where = {
       ...where,
       number: {
-        [Op.or]: dddsFilter.map(ddd => ({ [Op.like]: `55${ddd}%` }))
+        [Op.or]: dddsFilter.map(ddd => ({ [Op.like]: `549${ddd}%` }))
       }
     };
   }
