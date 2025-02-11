@@ -39,7 +39,7 @@
                   style="width: 40vw"
                   :showSearch="false"
                   :emojisByRow="20"
-                  labelSearch="B..."
+                  labelSearch="Buscar..."
                   lang="pt-BR"
                   @select="onInsertSelectEmoji"
                 />
