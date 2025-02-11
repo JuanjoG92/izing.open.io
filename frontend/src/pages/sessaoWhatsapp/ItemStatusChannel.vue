@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <q-item>
       <q-item-section avatar>
@@ -49,7 +49,7 @@
  abrir, o haga clic en el botón 'Desconectar' para obtener un nuevo código QR </span>
         </q-item-label>
         <q-item-label v-if="item.status == 'OPENING'">
-          <span class="text-weight-medium"> Estabelecendo conexión. </span>
+          <span class="text-weight-medium"> Estableciendo conexión. </span>
           <span class="row col"> Esto puede demorar un poco... </span>
         </q-item-label>
         <q-item-label caption>
