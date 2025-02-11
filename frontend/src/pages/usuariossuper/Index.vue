@@ -24,7 +24,7 @@
           debounce="500"
           v-model="filter"
           clearable
-          placeholder="Localize"
+          placeholder="Buscar"
           @input="filtrarUsuario"
         >
           <template v-slot:prepend>
@@ -38,7 +38,7 @@
             'q-ml-none q-mt-md q-mr-md': $q.screen.width < 500
           }"
           color="primary"
-          label="Adicionar"
+          label="Agregar"
           @click="usuarioSelecionado = {}; modalUsuario = true"
           />
 
