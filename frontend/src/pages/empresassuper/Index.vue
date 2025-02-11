@@ -19,7 +19,7 @@
         <q-btn
           rounded
           color="primary"
-          label="Adicionar"
+          label="Agregar"
           @click="tenantEdicao = {}; modalTenant = true"
         />
       </template>
