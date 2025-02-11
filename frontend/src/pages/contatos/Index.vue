@@ -48,7 +48,7 @@
           debounce="500"
           v-model="filter"
           clearable
-          placeholder="Localizar"
+          placeholder="Buscar"
           @input="filtrarContato"
         >
           <template v-slot:prepend>
