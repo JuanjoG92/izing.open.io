@@ -17,7 +17,7 @@
               v-model.trim="usuario.name"
               :validator="$v.usuario.name"
               @blur="$v.usuario.name.$touch"
-              label="Nome"
+              label="Nombre"
             />
           </div>
           <div class="col-12">
