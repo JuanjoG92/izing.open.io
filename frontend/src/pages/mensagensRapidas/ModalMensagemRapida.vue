@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <q-dialog
     persistent
     :value="modalMensagemRapida"
@@ -49,7 +49,7 @@
                   style="width: 40vw"
                   :showSearch="false"
                   :emojisByRow="20"
-                  labelSearch="Localizar..."
+                  labelSearch="B..."
                   lang="pt-BR"
                   @select="onInsertSelectEmoji"
                 />
