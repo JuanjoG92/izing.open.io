@@ -24,7 +24,7 @@
         </span>
       </q-card-section>
       <q-card-section>
-        <div class="row">Si tiene algún problema para leerlo, solicite un nuevo código QR. </div>
+        <div class="row">Luego de escanear aguarde unos instantes..Si tiene algún problema para leerlo, solicite un nuevo código QR. </div>
         <div class="row col-12 justify-center">
           <q-btn color="primary"
             glossy
