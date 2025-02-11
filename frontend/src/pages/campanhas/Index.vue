@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <q-table
       flat
