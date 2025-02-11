@@ -92,17 +92,16 @@
                     size="1.8em"
                     class="q-mb-sm">
               <q-tooltip>
-                Atención resuelta
+                Atendimento Resolvido
               </q-tooltip>
             </q-icon>
-            <q-icon
-              v-if="(ticket.stepAutoReplyId && ticket.autoReplyId && ticket.status === 'pending') || (ticket.chatFlowId && ticket.stepChatFlow && ticket.status === 'pending')"
+            <q-icon v-if="(ticket.stepAutoReplyId && ticket.autoReplyId && ticket.status === 'pending') || (ticket.chatFlowId && ticket.stepChatFlow && ticket.status === 'pending')"
                     name="mdi-robot"
                     color="primary"
                     size="1.8em"
                     class="q-mb-sm">
               <q-tooltip>
-                ChatBot atendiendo
+                ChatBot atendendo
               </q-tooltip>
             </q-icon>
           </span>
@@ -156,7 +155,7 @@
 
 <script>
   import { formatDistance, parseJSON } from 'date-fns'
-  import es from 'date-fns/locale/es'
+  import pt from 'date-fns/locale/pt-BR'
   import mixinAtualizarStatusTicket from './mixinAtualizarStatusTicket'
   import { outlinedAccountCircle } from '@quasar/extras/material-icons-outlined'
 
@@ -221,10 +220,10 @@
         if (timestamp) {
           data = new Date(Number(timestamp))
         }
-        return formatDistance(data, new Date(), { locale: es })
+        return formatDistance(data, new Date(), { locale: pt })
       },
       abrirChatContato(ticket) {
-        // caso esté en tamaño móvil, cerrar la drawer de los contactos
+        // caso esteja em um tamanho mobile, fechar a drawer dos contatos
         if (this.$q.screen.lt.md && ticket.status !== 'pending') {
           this.$root.$emit('infor-cabecalo-chat:acao-menu')
         }
@@ -240,6 +239,7 @@
     }
   }
 </script>
+
 <style lang="sass">
 
   .relative-container
