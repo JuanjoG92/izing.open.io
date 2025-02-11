@@ -49,7 +49,7 @@
             @click="gerirFilasUsuario(props.row)"
           >
             <q-tooltip>
-              Gestão de Filas do usuário
+              Gestión de Filas de usuario
             </q-tooltip>
           </q-btn>
           <q-btn
@@ -196,15 +196,15 @@ export default {
     },
     deletarUsuario (usuario) {
       this.$q.dialog({
-        title: `Atenção!! Deseja realmente deletar o usuario "${usuario.name}"?`,
-        // message: 'Mensagens antigas não serão apagadas no whatsapp.',
+        title: `¡¡Atención!! ¿Realmente desea eliminar el usuario "${usuario.name}"?`,
+        // message: 'Los mensajes antiguos no se eliminarán en WhatsApp.',
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
@@ -218,7 +218,7 @@ export default {
               type: 'positive',
               progress: true,
               position: 'top',
-              message: `Usuario ${usuario.name} deletado!`,
+              message: `Usuario ${usuario.name} borrado!`,
               actions: [{
                 icon: 'close',
                 round: true,
@@ -228,7 +228,7 @@ export default {
           })
           .catch(error => {
             console.error(error)
-            this.$notificarErro('Não é possível deletar o usuário', error)
+            this.$notificarErro('No se puede eliminar el usuario', error)
           })
         this.loading = false
       })
