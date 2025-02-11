@@ -110,7 +110,7 @@
                   rounded
                   v-if="item.status == 'DISCONNECTED' && item.type == 'whatsapp'"
                   color="blue-5"
-                  label="Novo QR Code"
+                  label="Nuevo Código QR"
                   @click="handleRequestNewQrCode(item, 'btn-qrCode')"
                   icon-right="watch_later"
                   :disable="!isAdmin"
@@ -230,7 +230,7 @@ export default {
         },
         {
           name: 'session',
-          label: 'Sessão',
+          label: 'Sesión',
           field: 'status',
           align: 'center'
         },
