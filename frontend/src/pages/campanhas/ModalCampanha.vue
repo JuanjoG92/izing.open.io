@@ -151,7 +151,7 @@
                     style="width: 40vw"
                     :showSearch="false"
                     :emojisByRow="20"
-                    labelSearch="Buscar..."
+                    labelSearch="Localizar..."
                     lang="pt-BR"
                     @select="(v) => onInsertSelectEmoji(v, 'message1')"
                   />
@@ -222,7 +222,7 @@
                     style="width: 40vw"
                     :showSearch="false"
                     :emojisByRow="20"
-                    labelSearch="Buscar..."
+                    labelSearch="Localizar..."
                     lang="pt-BR"
                     @select="(v) => onInsertSelectEmoji(v, 'message2')"
                   />
@@ -293,7 +293,7 @@
                     style="width: 40vw"
                     :showSearch="false"
                     :emojisByRow="20"
-                    labelSearch="Buscar..."
+                    labelSearch="Localizar..."
                     lang="pt-BR"
                     @select="(v) => onInsertSelectEmoji(v, 'message3')"
                   />
