@@ -33,7 +33,7 @@
               v-model.trim="usuario.name"
               :validator="$v.usuario.name"
               @blur="$v.usuario.name.$touch"
-              label="Nome"
+              label="Nombre"
             />
           </div>
           <div class="col-12">
@@ -85,14 +85,14 @@
       <q-card-actions align="right">
         <q-btn
           rounded
-          label="Sair"
+          label="Salir"
           class="q-px-md q-mr-sm"
           color="negative"
           v-close-popup
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           class="q-px-md"
           color="primary"
           @click="handleUsuario"
