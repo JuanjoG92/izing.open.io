@@ -355,7 +355,7 @@ const objMenuAdmin = [
     routeName: 'configuracoes'
   },
   {
-    title: 'Campaña',
+    title: 'Campañas',
     caption: 'Campañas de envio',
     icon: 'mdi-message-bookmark-outline',
     routeName: 'campanhas'
