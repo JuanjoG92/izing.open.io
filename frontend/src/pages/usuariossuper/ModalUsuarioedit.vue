@@ -7,7 +7,7 @@
   >
     <q-card style="width: 600px">
       <q-card-section>
-        <div class="text-h6">Registrar usuario</div>
+        <div class="text-h6">Cadastrar Usuário</div>
       </q-card-section>
       <q-card-section class="q-col-gutter-sm">
         <div class="row q-col-gutter-sm">
@@ -17,7 +17,7 @@
               v-model.trim="usuario.name"
               :validator="$v.usuario.name"
               @blur="$v.usuario.name.$touch"
-              label="Nome"
+              label="Nombre"
             />
           </div>
           <div class="col-12">
@@ -38,7 +38,7 @@
               :validator="$v.usuario.password"
               @blur="$v.usuario.password.$touch"
               :type="isPwd ? 'password' : 'text'"
-              label="Contraseña"
+              label="Senha"
             >
               <template v-slot:append>
                 <q-icon
@@ -111,8 +111,7 @@ export default {
       isPwd: false,
       optionsProfile: [
         { value: 'user', label: 'Usuario' },
-        { value: 'admin', label: 'Administrador' },
-        { value: 'super', label: 'Super' }
+        { value: 'admin', label: 'Administrador' }
       ],
       usuario: {
         name: '',
@@ -202,7 +201,7 @@ export default {
             progress: true,
             position: 'top',
             textColor: 'black',
-            message: 'Usuario editado!',
+            message: 'Usuário editado!',
             actions: [{
               icon: 'close',
               round: true,
@@ -232,7 +231,7 @@ export default {
         } else {
           this.$q.notify({
             type: 'negative',
-            message: 'No se puede cambiar de usuario.',
+            message: 'No fué posible editar el usuario..',
             caption: 'ERR_UNKNOWN_ERROR',
             position: 'top',
             progress: true
