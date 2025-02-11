@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <q-dialog
     persistent
     :value="modalUsuario"
@@ -111,7 +111,7 @@ export default {
     return {
       isPwd: false,
       optionsProfile: [
-        { value: 'user', label: 'Usuário' },
+        { value: 'user', label: 'Usuario' },
         { value: 'admin', label: 'Administrador' }
       ],
       usuario: {
@@ -172,7 +172,7 @@ export default {
           type: 'warning',
           progress: true,
           position: 'top',
-          message: 'Ops! Verifique os erros...',
+          message: 'Ops! Verifique los errores...',
           actions: [{
             icon: 'close',
             round: true,
@@ -200,7 +200,7 @@ export default {
             progress: true,
             position: 'top',
             textColor: 'black',
-            message: 'Usuário editado!',
+            message: 'Usuario editado!',
             actions: [{
               icon: 'close',
               round: true,
@@ -214,7 +214,7 @@ export default {
             type: 'positive',
             progress: true,
             position: 'top',
-            message: 'Usuário criado!',
+            message: 'Usuario creado!',
             actions: [{
               icon: 'close',
               round: true,
@@ -228,7 +228,7 @@ export default {
         if (error.data.error === 'ERR_USER_LIMIT_USER_CREATION') {
           Notify.create({
             type: 'negative',
-            message: 'Limite de usuario atingido.',
+            message: 'Limite de usuarios alcanzado.',
             caption: 'ERR_USER_LIMIT_USER_CREATION',
             position: 'top',
             progress: true
