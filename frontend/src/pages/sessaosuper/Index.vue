@@ -7,7 +7,7 @@
         class="full-width"
       >
         <q-card-section class="text-h6 text-bold">
-          Canais
+          Conexiones
           <q-space />
         </q-card-section>
       </q-card>
@@ -30,7 +30,7 @@
               </q-avatar>
             </q-item-section>
             <q-item-section>
-              <q-item-label class="text-h6 text-bold">Nome: {{ item.name }}</q-item-label>
+              <q-item-label class="text-h6 text-bold">Nombre: {{ item.name }}</q-item-label>
               <q-item-label class="text-h6 text-caption">
                 {{ item.type }}
               </q-item-label>
