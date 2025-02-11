@@ -5,12 +5,12 @@ import DatePick from 'src/components/cDatePick'
 import cDateTimePick from 'src/components/cDateTimePick'
 
 import { format, parseISO } from 'date-fns'
-import pt from 'date-fns/locale/es'
+import es from 'date-fns/locale/es'
 import { UpdateConfiguracoesUsuarios } from 'src/service/user'
 
 const formatarValorMoeda = (num, black = false, intl = {}) => {
   const config = {
-    language: 'es',
+    language: 'es-es',
     options: {
       // style: 'currency',
       // currency: 'ARS',
