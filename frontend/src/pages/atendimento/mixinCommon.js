@@ -1,33 +1,33 @@
 import { format, parseISO, parseJSON } from 'date-fns'
-import es from 'date-fns/locale/es'
+import pt from 'date-fns/locale/pt-BR'
 import { mapGetters } from 'vuex'
 
 export default {
   computed: {
     ...mapGetters(['mensagensTicket', 'ticketFocado', 'hasMore'])
   },
-  data() {
+  data () {
     return {
       loading: false
     }
   },
   methods: {
-    scrollToBottom() {
+    scrollToBottom () {
       setTimeout(() => {
         this.$root.$emit('scrollToBottomMessageChat')
       }, 200)
     },
-    dataInWords(date) {
-      return format(parseJSON(date), 'HH:mm', { locale: es })
+    dataInWords (date) {
+      return format(parseJSON(date), 'HH:mm', { locale: pt })
     },
-    farmatarMensagemWhatsapp(body) {
+    farmatarMensagemWhatsapp (body) {
       if (!body) return
       let format = body
-      function is_aplhanumeric(c) {
+      function is_aplhanumeric (c) {
         var x = c.charCodeAt()
         return !!(((x >= 65 && x <= 90) || (x >= 97 && x <= 122) || (x >= 48 && x <= 57)))
       }
-      function whatsappStyles(format, wildcard, opTag, clTag) {
+      function whatsappStyles (format, wildcard, opTag, clTag) {
         var indices = []
         for (var i = 0; i < format.length; i++) {
           if (format[i] === wildcard) {
@@ -55,7 +55,7 @@ export default {
       format = format.replace(/\n/gi, '<br>')
       return format
     },
-    formatarData(data, formato = 'dd/MM/yyyy') {
+    formatarData (data, formato = 'dd/MM/yyyy') {
       return format(parseISO(data), formato, { locale: pt })
     }
   }
