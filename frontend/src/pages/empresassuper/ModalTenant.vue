@@ -10,12 +10,12 @@
       class="q-pa-lg"
     >
       <q-card-section>
-        <div class="text-h6">{{ tenantEdicao.id ? 'Editar': 'Criar' }} Empresa</div>
+        <div class="text-h6">{{ tenantEdicao.id ? 'Editar': 'Crear' }} Empresa</div>
       </q-card-section>
       <q-card-section>
         <q-toggle
           v-model="toggleStatus"
-          :label="toggleStatus ? 'Ativo' : 'Inativo'"
+          :label="toggleStatus ? 'Activo' : 'Inactivo'"
           color="primary"
         />
         <q-input
@@ -31,7 +31,7 @@
           outlined
           type="number"
           v-model="tenant.maxUsers"
-          label="Usuarios"
+          label="Cantidad de Usuarios"
         />
         <q-input
           class="row col"
@@ -39,7 +39,7 @@
           outlined
           type="number"
           v-model="tenant.maxConnections"
-          label="Conexiones"
+          label="Cantidad de Conexiones"
         />
       </q-card-section>
       <q-card-actions
