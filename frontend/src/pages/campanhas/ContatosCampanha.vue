@@ -327,7 +327,7 @@
                 class="q-ml-md"
                 color="positive"
                 icon="save"
-                label="Adicionar"
+                label="Agregar"
                 @click="addContatosCampanha"
               />
             </template>
