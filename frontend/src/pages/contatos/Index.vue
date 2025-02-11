@@ -71,7 +71,7 @@
               @click="confirmarSincronizarContatos"
             >
               <q-item-section>
-                <q-item-label>Importar do Whatsapp</q-item-label>
+                <q-item-label>Importar de Whatsapp</q-item-label>
               </q-item-section>
             </q-item>
             <q-item
