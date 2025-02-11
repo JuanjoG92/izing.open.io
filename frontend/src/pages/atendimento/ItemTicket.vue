@@ -92,7 +92,7 @@
                     size="1.8em"
                     class="q-mb-sm">
               <q-tooltip>
-                Atendimento Resolvido
+                Atendimento Resuelta
               </q-tooltip>
             </q-icon>
             <q-icon v-if="(ticket.stepAutoReplyId && ticket.autoReplyId && ticket.status === 'pending') || (ticket.chatFlowId && ticket.stepChatFlow && ticket.status === 'pending')"
@@ -101,7 +101,7 @@
                     size="1.8em"
                     class="q-mb-sm">
               <q-tooltip>
-                ChatBot atendendo
+                ChatBot atendiendo
               </q-tooltip>
             </q-icon>
           </span>
