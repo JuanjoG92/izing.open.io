@@ -108,7 +108,7 @@
           </span>
         </q-item-label>
         <q-item-label class="row col items-center justify-between"
-          caption>
+                      caption>
           Usuário: {{ ticket.username }}
           <q-chip :color="$q.dark.isActive ? 'blue-9' : 'blue-2'"
             dense
