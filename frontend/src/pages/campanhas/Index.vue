@@ -102,7 +102,7 @@
             @click="deletarCampanha(props.row)"
           >
             <q-tooltip>
-              Excluir Campaña
+              Eliminar Campaña
             </q-tooltip>
           </q-btn>
         </q-td>
