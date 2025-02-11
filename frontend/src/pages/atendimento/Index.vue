@@ -77,7 +77,7 @@
             @click="() => $router.push({ name: 'home-dashboard' })"
           >
             <q-tooltip content-class="bg-padrao text-grey-9 text-bold">
-              Retornar ao menu
+              Regresar al menú
             </q-tooltip>
           </q-btn>
         </q-toolbar>
