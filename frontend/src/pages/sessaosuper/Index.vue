@@ -97,19 +97,19 @@ export default {
       columns: [
         {
           name: 'name',
-          label: 'Nome',
+          label: 'Nombre',
           field: 'name',
           align: 'left'
         },
         {
           name: 'status',
-          label: 'Status',
+          label: 'Estado',
           field: 'status',
           align: 'center'
         },
         {
           name: 'session',
-          label: 'Sessão',
+          label: 'Sesión',
           field: 'status',
           align: 'center'
         },
@@ -128,13 +128,13 @@ export default {
         },
         {
           name: 'isDefault',
-          label: 'Padrão',
+          label: 'Principal',
           field: 'isDefault',
           align: 'center'
         },
         {
           name: 'acoes',
-          label: 'Ações',
+          label: 'Acciones',
           field: 'acoes',
           align: 'center'
         }
