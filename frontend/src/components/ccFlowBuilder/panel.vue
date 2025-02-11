@@ -206,7 +206,7 @@ export default {
       }
       UpdateChatFlow(data)
         .then(res => {
-          this.$notificarSucesso('Fluxo salvo!')
+          this.$notificarSucesso('Flujo guardado!')
         })
         .catch(error => {
           console.error(error)
@@ -222,7 +222,7 @@ export default {
           progress: true,
           position: 'top',
           timeout: 2500,
-          message: 'Não é possível conectar o elemento a si mesmo.',
+          message: 'No se puede conectar el elemento consigo mismo.',
           actions: [{
             icon: 'close',
             round: true,
@@ -231,7 +231,7 @@ export default {
         })
         return false
       }
-      this.$notificarSucesso('Conexão realizada.')
+      this.$notificarSucesso('Conexión realizada.')
       return true
     },
     jsPlumbInit () {
@@ -299,7 +299,7 @@ export default {
           this.jsPlumb.draggable(node.id, {
             containment: 'parent',
             stop: function (el) {
-              console.log('arraste para o final: ', el)
+              console.log('arraste para el final: ', el)
             }
           })
         }
@@ -350,15 +350,15 @@ export default {
         this.deleteNode(this.activeElement)
       } else if (this.activeElement.type === 'line') {
         this.$q.dialog({
-          title: 'Atenção!!',
-          message: 'Deseja realmente deletar a linha selecionada?',
+          title: 'Atención!!',
+          message: 'Desea realmente borrar la fila selecionada?',
           cancel: {
-            label: 'Não',
+            label: 'No',
             color: 'primary',
             push: true
           },
           ok: {
-            label: 'Sim',
+            label: 'Si',
             color: 'negative',
             push: true
           },
@@ -402,7 +402,7 @@ export default {
       var containerRect = efContainer.getBoundingClientRect()
       var left = screenX, top = screenY
       if (left < containerRect.x || left > containerRect.width + containerRect.x || top < containerRect.y || containerRect.y > containerRect.y + containerRect.height) {
-        this.$notificarErro('Arraste o elemento para a tela.')
+        this.$notificarErro('Arraste el elemento para la interfaz.')
         return
       }
       left = left - containerRect.x + efContainer.scrollLeft
@@ -455,15 +455,15 @@ export default {
 
     deleteNode (node) {
       this.$q.dialog({
-        title: 'Atenção!!',
-        message: `Deseja realmente deletar o elemento (${node.name})?`,
+        title: 'Atención!!',
+        message: `Desea realmente borrar el elemento (${node.name})?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
