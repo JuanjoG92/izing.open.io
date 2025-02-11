@@ -252,7 +252,7 @@
                           rounded
                           v-model="condition.type"
                           :options="optionsSe"
-                          label="Se"
+                          label="Seleccione"
                           map-options
                           emit-value
                         />
@@ -260,7 +260,7 @@
                           v-if="condition.type === 'R'"
                           dense
                           rounded
-                          label="Respostas"
+                          label="Respuestas"
                           outlined
                           v-model="condition.condition"
                           use-input
@@ -419,7 +419,7 @@
                           style="width: 40vw"
                           :showSearch="false"
                           :emojisByRow="20"
-                          labelSearch="Localizar..."
+                          labelSearch="Buscar..."
                           lang="pt-BR"
                           @select="onInsertSelectEmojiSaudacao"
                         />
@@ -488,7 +488,7 @@
                           style="width: 40vw"
                           :showSearch="false"
                           :emojisByRow="20"
-                          labelSearch="Localizar..."
+                          labelSearch="Buscar..."
                           lang="pt-BR"
                           @select="onInsertSelectEmojiNotOptionsSelectMessage"
                         />
@@ -941,7 +941,7 @@ export default {
     },
     removeItem (el, idx) {
       this.$q.dialog({
-        title: 'Atenção!!',
+        title: 'Atención!!',
         message: `Desea realmente eliminar el elemento (${idx})?`,
         cancel: {
           label: 'No',
