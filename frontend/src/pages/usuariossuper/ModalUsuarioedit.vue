@@ -7,7 +7,7 @@
   >
     <q-card style="width: 600px">
       <q-card-section>
-        <div class="text-h6">Cadastrar Usuário</div>
+        <div class="text-h6">Registrar usuario</div>
       </q-card-section>
       <q-card-section class="q-col-gutter-sm">
         <div class="row q-col-gutter-sm">
@@ -38,7 +38,7 @@
               :validator="$v.usuario.password"
               @blur="$v.usuario.password.$touch"
               :type="isPwd ? 'password' : 'text'"
-              label="Senha"
+              label="Contraseña"
             >
               <template v-slot:append>
                 <q-icon
@@ -69,14 +69,14 @@
       <q-card-actions align="right">
         <q-btn
           rounded
-          label="Sair"
+          label="Salir"
           class="q-px-md q-mr-sm"
           color="negative"
           v-close-popup
         />
         <q-btn
           rounded
-          label="Salvar"
+          label="Guardar"
           class="q-px-md"
           color="primary"
           @click="handleUsuario"
@@ -110,8 +110,9 @@ export default {
     return {
       isPwd: false,
       optionsProfile: [
-        { value: 'user', label: 'Usuário' },
-        { value: 'admin', label: 'Administrador' }
+        { value: 'user', label: 'Usuario' },
+        { value: 'admin', label: 'Administrador' },
+        { value: 'super', label: 'Super' }
       ],
       usuario: {
         name: '',
@@ -171,7 +172,7 @@ export default {
           type: 'warning',
           progress: true,
           position: 'top',
-          message: 'Ops! Verifique os erros...',
+          message: 'Ops! Verifique los errores...',
           actions: [{
             icon: 'close',
             round: true,
@@ -201,7 +202,7 @@ export default {
             progress: true,
             position: 'top',
             textColor: 'black',
-            message: 'Usuário editado!',
+            message: 'Usuario editado!',
             actions: [{
               icon: 'close',
               round: true,
@@ -223,7 +224,7 @@ export default {
         } else if (error.data.error === 'ERR_EMAIL_ALREADY_REGISTERED') {
           this.$q.notify({
             type: 'negative',
-            message: 'Este e-mail já está cadastrado.',
+            message: 'Este e-mail ya está registrado.',
             caption: 'ERR_EMAIL_ALREADY_REGISTERED',
             position: 'top',
             progress: true
@@ -231,7 +232,7 @@ export default {
         } else {
           this.$q.notify({
             type: 'negative',
-            message: 'Não foi possível alterar o usuário.',
+            message: 'No se puede cambiar de usuario.',
             caption: 'ERR_UNKNOWN_ERROR',
             position: 'top',
             progress: true
