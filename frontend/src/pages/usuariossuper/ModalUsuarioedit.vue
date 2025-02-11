@@ -38,7 +38,7 @@
               :validator="$v.usuario.password"
               @blur="$v.usuario.password.$touch"
               :type="isPwd ? 'password' : 'text'"
-              label="Senha"
+              label="Constraseña"
             >
               <template v-slot:append>
                 <q-icon
