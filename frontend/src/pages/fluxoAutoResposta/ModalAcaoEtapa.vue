@@ -106,7 +106,7 @@
                   style="width: 40vw"
                   :showSearch="false"
                   :emojisByRow="20"
-                  labelSearch="Localizar..."
+                  labelSearch="Buscar..."
                   lang="pt-BR"
                   @select="onInsertSelectEmoji"
                 />
