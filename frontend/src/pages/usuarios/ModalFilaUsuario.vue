@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <q-dialog
     persistent
     :value="modalFilaUsuario"
@@ -7,7 +7,7 @@
   >
     <q-card style="width: 400px">
       <q-card-section class="q-pa-none">
-        <div class="full-width text-h6 row col bg-grey-4 q-pa-sm">Filas Usuário</div>
+        <div class="full-width text-h6 row col bg-grey-4 q-pa-sm">Filas de Usuario</div>
         <div
           style="font-size: 1em"
           class="text-caption text-bold row col q-px-sm q-pt-sm"
@@ -35,14 +35,14 @@
       </q-card-section>
       <q-card-actions align="right">
         <q-btn
-          label="Sair"
+          label="Salir"
           class="q-px-md q-mr-sm"
           color="negative"
           rounded
           v-close-popup
         />
         <q-btn
-          label="Salvar"
+          label="Guardar"
           class="q-px-md"
           color="primary"
           rounded
@@ -97,7 +97,7 @@ export default {
         type: 'positive',
         progress: true,
         position: 'top',
-        message: 'Filas do usuário editadas com sucesso!',
+        message: 'Filas de usuario editadas con éxito!',
         actions: [{
           icon: 'close',
           round: true,
