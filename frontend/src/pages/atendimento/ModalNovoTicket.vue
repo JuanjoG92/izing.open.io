@@ -29,7 +29,7 @@
           fill-input
           option-label="name"
           option-value="id"
-          label="Localizar Contacto"
+          label="Buscar Contacto"
           hint="Introduzca al menos dos letras para encontrar el contacto."
         >
           <template v-slot:before-options>
