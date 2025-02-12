@@ -163,7 +163,7 @@
               </q-list>
             </q-menu>
 
-            <q-tooltip>Usuário</q-tooltip>
+            <q-tooltip>Usuario</q-tooltip>
           </q-btn>
         </div>
       </q-toolbar>
@@ -228,7 +228,7 @@
           @input="$setConfigsUsuario({ isDark: !$q.dark.isActive })"
         >
           <q-tooltip content-class="text-body1 hide-scrollbar">
-            {{ $q.dark.isActive ? 'Desativar' : 'Ativar' }} Modo Escuro (Dark Mode)
+            {{ $q.dark.isActive ? 'Desactivar' : 'Activar' }} Modo Escuro (Dark Mode)
           </q-tooltip>
         </q-toggle>
       </div>
@@ -343,7 +343,7 @@ const objMenuAdmin = [
     routeName: 'etiquetas'
   },
   {
-    title: 'Horário de Atencición',
+    title: 'Horario de Atención',
     caption: 'Horário de funcionamiento',
     icon: 'mdi-calendar-clock',
     routeName: 'horarioAtendimento'
@@ -359,13 +359,13 @@ const objMenuAdmin = [
     caption: 'Campañas de envio',
     icon: 'mdi-message-bookmark-outline',
     routeName: 'campanhas'
-  },
-  {
-    title: 'API',
-    caption: 'Integrción con sistemas externos',
-    icon: 'mdi-call-split',
-    routeName: 'api-service'
   }
+//  {
+//    title: 'API',
+//    caption: 'Integrción con sistemas externos',
+//    icon: 'mdi-call-split',
+//    routeName: 'api-service'
+//  }
 ]
 
 const superMenu = [
