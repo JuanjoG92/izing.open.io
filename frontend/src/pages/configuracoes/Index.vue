@@ -40,7 +40,7 @@
         v-ripple
       >
         <q-item-section>
-          <q-item-label>No visualizar Tickets no ChatBot</q-item-label>
+          <q-item-label>No visualizar Tickets del ChatBot</q-item-label>
           <q-item-label caption>Sólo los administradores podrán ver los tickets con los que haya interactuado el ChatBot..</q-item-label>
         </q-item-section>
         <q-item-section avatar>
@@ -172,7 +172,7 @@
         </div>
       </div>
 
-      <div class="row q-px-md">
+      <!--div class="row q-px-md">
         <q-item tag="label" class="col-8" v-ripple>
           <q-item-section>
             <q-item-label>Token NotificaME</q-item-label>
@@ -196,7 +196,7 @@
             @input="atualizarConfiguracao('hubToken')"
           />
         </div>
-       </div>
+       </div-->
 
     </q-list>
   </div>
