@@ -78,7 +78,7 @@
               </q-card-section>
             </q-card>
           </div>
-          <!--div class="col-xs-12 col-sm-shrink">
+          <div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -90,8 +90,8 @@
                 Demanda
               </q-card-section>
             </q-card>
-          </div-->
-          <!--div class="col-xs-12 col-sm-shrink">
+          </div>
+          <div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -103,7 +103,7 @@
                 Recibido
               </q-card-section>
             </q-card>
-          </div-->
+          </div>
           <div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
@@ -113,7 +113,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.new_contacts }} </p>
-                Contactos
+                Nuevos Contactos
               </q-card-section>
             </q-card>
           </div>
