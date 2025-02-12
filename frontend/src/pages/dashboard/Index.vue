@@ -78,7 +78,7 @@
               </q-card-section>
             </q-card>
           </div>
-          <div class="col-xs-12 col-sm-shrink">
+          <!--div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -87,11 +87,11 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_ativa }} </p>
-                Demanda
+                Abiertos
               </q-card-section>
             </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-shrink">
+          </div-->
+          <!--div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -100,10 +100,10 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.qtd_demanda_receptiva }} </p>
-                Recibido
+                Pendientes
               </q-card-section>
             </q-card>
-          </div>
+          </div-->
           <div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
@@ -113,7 +113,7 @@
             >
               <q-card-section class="text-center">
                 <p class="text-h4 text-bold text-center"> {{ ticketsAndTimes.new_contacts }} </p>
-                Nuevos Contactos
+                Contactos
               </q-card-section>
             </q-card>
           </div>
@@ -215,7 +215,7 @@
         >
           <template v-slot:body-cell-name="props">
             <q-td :props="props">
-              <div class="row col text-bold"> {{ props.row.name || 'sin informacion' }} </div>
+              <div class="row col text-bold"> {{ props.row.name || 'Sin informacion' }} </div>
               <div class="row col text-caption">{{ props.row.email }} </div>
             </q-td>
           </template>
@@ -607,7 +607,7 @@ export default {
           align: 'left',
           style: 'width: 300px;',
           format: (v, r) => {
-            return v ? `${r.name} | ${r.email}` : 'sin informacion'
+            return v ? `${r.name} | ${r.email}` : 'Sin informacion'
           }
         },
         {
