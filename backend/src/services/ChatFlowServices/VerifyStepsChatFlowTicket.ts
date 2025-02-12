@@ -327,7 +327,7 @@ const VerifyStepsChatFlowTicket = async (
           const messageData = {
             body:
               flowConfig.configurations.notOptionsSelectMessage.message ||
-              "Desculpe! Não entendi sua resposta. Vamos tentar novamente! Escolha uma opção válida.",
+              "¡Lo siento! No entendí tu respuesta.. Por favor elija una opción válida.",
             fromMe: true,
             read: true,
             sendType: "bot"
