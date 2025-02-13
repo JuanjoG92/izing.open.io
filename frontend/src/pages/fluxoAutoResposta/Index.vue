@@ -336,7 +336,7 @@ export default {
           align: 'left',
           format: (v) => this.tipoAutoResposta.find(a => a.value == v).label || ''
         },
-        { name: 'isActive', label: 'Status', field: 'isActive', align: 'center', format: (v) => v === true ? 'Ativo' : 'Inativo' },
+        { name: 'isActive', label: 'Status', field: 'isActive', align: 'center', format: (v) => v === true ? 'Activo' : 'Inactivo' },
         { name: 'celularTeste', label: 'Celular Teste', field: 'celularTeste', align: 'center' },
         { name: 'acoes', label: '', field: 'acoes', align: 'center' }
       ],
@@ -357,7 +357,7 @@ export default {
           align: 'center',
           format: (v) => v ? this.filas.find(f => f.id === v).queue : ''
         },
-        { name: 'userIdDestination', label: 'Usuário Destino', field: 'userIdDestination', align: 'center', format: (v) => v ? this.usuarios.find(u => u.id === v).name : '' },
+        { name: 'userIdDestination', label: 'Usuario Destino', field: 'userIdDestination', align: 'center', format: (v) => v ? this.usuarios.find(u => u.id === v).name : '' },
         { name: 'nextStepId', label: 'ID Etapa destino', field: 'nextStepId', align: 'center' },
         { name: 'acoes', label: 'Acciones', field: 'acoes', align: 'center' }
       ],
@@ -474,7 +474,7 @@ export default {
         idAutoReply: autoResposta.id
       }
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `¿Realmente quieres eliminar la etapa "ID: ${etapa.id}"?`,
         cancel: {
           label: 'No',
@@ -568,7 +568,7 @@ export default {
               type: 'positive',
               progress: true,
               position: 'top',
-              message: `Acciòón Etapa ${etapa.id} borrada!`,
+              message: `Acción Etapa ${etapa.id} borrada!`,
               actions: [{
                 icon: 'close',
                 round: true,
