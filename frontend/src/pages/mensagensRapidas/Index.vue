@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div>
     <q-table
       flat
@@ -105,15 +105,15 @@ export default {
     },
     deletarMensagem (mensagem) {
       this.$q.dialog({
-        title: 'Atenção!!',
-        message: `Deseja realmente deletar a mensagem de chave "${mensagem.key}"?`,
+        title: 'Atención!',
+        message: `¿Estás seguro de que deseas eliminar el mensaje clave "${mensagem.key}"?`,
         cancel: {
-          label: 'Não',
+          label: 'No',
           color: 'primary',
           push: true
         },
         ok: {
-          label: 'Sim',
+          label: 'Si',
           color: 'negative',
           push: true
         },
