@@ -350,7 +350,7 @@ export default {
         this.deleteNode(this.activeElement)
       } else if (this.activeElement.type === 'line') {
         this.$q.dialog({
-          title: 'Atención!!',
+          title: 'Atención!',
           message: 'Desea realmente borrar la fila selecionada?',
           cancel: {
             label: 'No',
@@ -455,7 +455,7 @@ export default {
 
     deleteNode (node) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `Desea realmente borrar el elemento (${node.name})?`,
         cancel: {
           label: 'No',
