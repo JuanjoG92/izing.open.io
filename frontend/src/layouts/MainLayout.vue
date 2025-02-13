@@ -57,7 +57,7 @@
 
                 <q-item v-if="(parseInt(notifications.count) + parseInt(notifications_p.count)) == 0">
                   <q-item-section style="cursor: pointer;">
-                    Nada de novo por aqui!
+                    Nada de nuevo por aqui!
                   </q-item-section>
                 </q-item>
                 <q-item v-if="parseInt(notifications_p.count) > 0">
@@ -569,8 +569,8 @@ export default {
     },
     abrirAtendimentoExistente (contato, ticket) {
       this.$q.dialog({
-        title: 'Atenção!!',
-        message: `${contato} posee una atención en curso (Atendimento: ${ticket.id}). Desea abrir atención?`,
+        title: 'Atención!',
+        message: `${contato} posee una atención en curso (Atención: ${ticket.id}). Desea abrir atención?`,
         cancel: {
           label: 'No',
           color: 'primary',
