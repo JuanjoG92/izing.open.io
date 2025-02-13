@@ -205,7 +205,7 @@ export default {
       optionsAcao: [
         { value: 0, label: 'Proxima Etapa' },
         { value: 1, label: 'Enviar para Fila' },
-        { value: 2, label: 'Enviar para usuário' }
+        { value: 2, label: 'Enviar para usuario' }
       ]
     }
   },
