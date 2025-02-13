@@ -7,7 +7,7 @@
   >
     <q-card style="width: 600px">
       <q-card-section>
-        <div class="text-h6">Cadastrar Usuário</div>
+        <div class="text-h6">Registrar Usuario</div>
       </q-card-section>
       <q-card-section class="q-col-gutter-sm">
         <div class="row q-col-gutter-sm">
@@ -201,7 +201,7 @@ export default {
             progress: true,
             position: 'top',
             textColor: 'black',
-            message: 'Usuário editado!',
+            message: 'Usuario editado!',
             actions: [{
               icon: 'close',
               round: true,
