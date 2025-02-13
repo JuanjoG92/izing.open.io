@@ -324,7 +324,7 @@
               />
             </div>
             <div class="row col justify-center q-my-sm text-white">
-              Carregando...
+              Cargando...
             </div>
           </div>
         </q-scroll-area>
