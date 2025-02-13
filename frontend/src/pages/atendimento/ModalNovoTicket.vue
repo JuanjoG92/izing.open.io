@@ -65,13 +65,13 @@
         class="q-pr-md"
       >
         <q-btn
-          label="Sair"
+          label="Salir"
           color="negative"
           v-close-popup
           class="q-px-md q-mr-lg"
         />
         <q-btn
-          label="Salvar"
+          label="Guardar"
           class="q-px-md "
           color="primary"
           @click="criarTicket"
