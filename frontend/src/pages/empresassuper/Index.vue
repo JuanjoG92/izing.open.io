@@ -134,7 +134,7 @@ export default {
     },
     deletarTenant (tenant) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `¿Está seguro de que desea eliminar la empresa "${tenant.id}"?`,
         cancel: {
           label: 'No',
