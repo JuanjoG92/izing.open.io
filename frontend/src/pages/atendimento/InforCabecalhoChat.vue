@@ -206,14 +206,14 @@
         <q-card-actions align="right">
           <q-btn
             rounded
-            label="Sair"
+            label="Salir"
             color="negative"
             v-close-popup
             class="q-mr-md"
           />
           <q-btn
             rounded
-            label="Salvar"
+            label="Guardar"
             color="positive"
             @click="confirmarTransferenciaTicket"
           />
