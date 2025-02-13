@@ -233,7 +233,7 @@ export default {
     },
     cancelarCampanha (campanha) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `¿Realmente quieres eliminar la Campaña? "${campanha.name}"?`,
         cancel: {
           label: 'No',
