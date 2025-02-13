@@ -330,7 +330,7 @@
                               :options="usuarios"
                               option-label="name"
                               option-value="id"
-                              label="Usuário"
+                              label="Usuario"
                               map-options
                               emit-value
                               clearable
@@ -380,7 +380,7 @@
           style="height: 280px;"
         >
           <div class="full-width bg-grey-3 text-bold row col justify-between text-left q-pa-md">
-            Mensagem de saudação (Fila/Usuário)
+            Mensaje de saludo (cola/usuario)
             <div class="row text-subtitle2">
               Cuando el bot dirige el servicio a una cola o usuario,
               Este mensaje será enviado.
@@ -579,7 +579,7 @@
                   :options="usuarios"
                   option-label="name"
                   option-value="id"
-                  label="Usuário"
+                  label="Usuario"
                   map-options
                   emit-value
                   clearable
@@ -874,7 +874,7 @@ export default {
     },
     removeConditionItem (condition, idx) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `Desea realmente eliminar la condición (${idx + 1})?`,
         cancel: {
           label: 'No',
@@ -941,7 +941,7 @@ export default {
     },
     removeItem (el, idx) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `Desea realmente eliminar el elemento (${idx})?`,
         cancel: {
           label: 'No',
