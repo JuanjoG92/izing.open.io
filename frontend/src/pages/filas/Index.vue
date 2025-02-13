@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <q-table
       flat
@@ -109,7 +109,7 @@ export default {
     },
     deletarFila (fila) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `¿Estás seguro de que quieres eliminar la fila "${fila.queue}"?`,
         cancel: {
           label: 'No',
