@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <q-table
       flat
@@ -120,7 +120,7 @@ export default {
     },
     deletarEtiqueta (etiqueta) {
       this.$q.dialog({
-        title: 'Atenção!!',
+        title: 'Atención!',
         message: `¿Estás seguro de que deseas eliminar la etiqueta "${etiqueta.tag}"?`,
         cancel: {
           label: 'No',
