@@ -228,8 +228,8 @@ export default {
     },
     gerarNovoToken (api) {
       this.$q.dialog({
-        title: 'Atenção!!',
-        message: `Deseja realmente gerar novo token para "${api.name}"?
+        title: 'Atención!',
+        message: `Desea realmente generar nuevo token para "${api.name}"?
         Tenga en cuenta que las integraciones que utilizan la corriente actual dejarán de funcionar
  hasta que actualice el token donde sea necesario.`,
         cancel: {
@@ -258,7 +258,7 @@ export default {
     },
     deletarApi (api) {
       this.$q.dialog({
-        title: 'Atención!!',
+        title: 'Atención!',
         message: `Desea realmente borrar "${api.name}"?`,
         cancel: {
           label: 'No',
