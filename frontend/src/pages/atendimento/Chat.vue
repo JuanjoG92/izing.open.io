@@ -30,11 +30,11 @@
         >
           <div slot="no-results">
             <div v-if="!cMessages.length">
-              Sem resultados :(
+              Sin resultados :(
             </div>
           </div>
           <div slot="no-more">
-            Nada mais a carregar :)
+            Nada más para cargar :)
           </div>
         </infinite-loading>
       </transition>
@@ -249,7 +249,7 @@
       <q-card :style="$q.screen.width < 770 ? `min-width: 98vw; max-width: 98vw` : 'min-width: 50vw; max-width: 50vw'">
         <q-card-section>
           <div class="text-h6">
-            Encaminhando Mensagem
+            Reenvío de mensaje
             <q-btn
               flat
               class="bg-padrao btn-rounded float-right"
