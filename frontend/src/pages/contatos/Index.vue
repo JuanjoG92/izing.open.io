@@ -663,7 +663,7 @@ export default {
     },
     abrirAtendimentoExistente (contato, ticket) {
       this.$q.dialog({
-        title: 'Atenção!!',
+        title: 'Atención!',
         message: `${contato.name} posee una atención en curso (Atencion: ${ticket.id}). Desea abrir atención?`,
         cancel: {
           label: 'No',
