@@ -183,7 +183,7 @@ export const messagesLog = {
     icon: 'mdi-arrow-decision'
   },
   retriesLimitUserDefine: {
-    message: 'Bot: Usuário definido (Limite de intentos)',
+    message: 'Bot: Usuario definido (Limite de intentos)',
     color: 'cyan-2',
     icon: 'mdi-account-check'
   },
