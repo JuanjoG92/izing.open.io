@@ -59,6 +59,7 @@
             @click="getDashData"
           />
         </div>
+
       </q-card-section>
     </q-card>
     <q-card class="q-my-md q-pa-sm">
@@ -77,7 +78,7 @@
               </q-card-section>
             </q-card>
           </div>
-          <div class="col-xs-12 col-sm-shrink">
+          <!--div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -89,8 +90,8 @@
                 Abiertos
               </q-card-section>
             </q-card>
-          </div>
-          <div class="col-xs-12 col-sm-shrink">
+          </div-->
+          <!--div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
               bordered
@@ -102,7 +103,7 @@
                 Pendientes
               </q-card-section>
             </q-card>
-          </div>
+          </div-->
           <div class="col-xs-12 col-sm-shrink">
             <q-card
               flat
@@ -141,6 +142,7 @@
             </q-card>
           </div>
         </div>
+
       </q-card-section>
     </q-card>
 
@@ -218,8 +220,11 @@
             </q-td>
           </template>
         </q-table>
+
       </q-card-section>
+
     </q-card>
+
   </div>
 </template>
 
@@ -287,7 +292,7 @@ export default {
           position: 'bottom'
         },
         title: {
-          text: 'Atenciones por conexiones de WhatsApp'
+          text: 'Atenciones por canal'
         },
         noData: {
           text: 'Sin datos aqui!',
