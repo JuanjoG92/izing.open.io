@@ -58,7 +58,7 @@
         />
         <q-btn
           flat
-          label="Salvar"
+          label="Guardar"
           color="primary"
           @click="handleAutoresposta"
         />
