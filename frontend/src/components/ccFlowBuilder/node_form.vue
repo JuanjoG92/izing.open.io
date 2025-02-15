@@ -702,7 +702,7 @@
           style="height: 330px;"
         >
           <div class="full-width bg-grey-3 text-bold text-body1 row col justify-between text-left q-pa-md">
-            Encerrar Atendimento
+            Cerrar Atención
             <div class="row text-subtitle2">
               Si el cliente ingresa alguno de los datos esperados, la atención será cancelada.
             </div>
