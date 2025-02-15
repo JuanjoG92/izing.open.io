@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <q-card bordered>
       <q-card-section>
@@ -9,7 +9,7 @@
           <legend class="q-px-sm">Filtros (Fecha de Atención)</legend>
           <div class="row q-gutter-md items-end">
             <div class="col-grow">
-              <label>Início</label>
+              <label>Inicio</label>
               <DatePick
                 dense
                 rounded
@@ -99,7 +99,7 @@
     <ccPrintModelLandscape
       id="slotTableRelatorioResumoAtendimentosUsuarios"
       :imprimirRelatorio="imprimir"
-      title="Relatório de Resumo Atendimentos Usuários"
+      title="Informe de Atenciones por Usuarios/Agentes"
       :styleP="`
       table { width: 100%; font-size: 10px; border-spacing: 1; border-collapse: collapse;  }
       #tableReport tr td { border:1px solid #DDD; padding-left: 10px; padding-right: 10px;  }
@@ -177,7 +177,7 @@ export default {
         { name: 'qtd_por_usuario', label: 'Total', field: 'qtd_por_usuario', align: 'center', style: 'width: 300px; text-align: center;' },
         { name: 'menor_tempo_por_usuario', label: 'Menor Tiempo (Min)', field: 'menor_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
         { name: 'maior_tempo_por_usuario', label: 'Mayor Tiempo (Min)', field: 'maior_tempo_por_usuario', align: 'center', style: 'width: 300px; text-align: center;', format: v => this.$formatarValorMoeda(v, 0) },
-        { name: 'tempo_medio_por_usuario', label: 'Tiempo Médio (Min)', field: 'tempo_medio_por_usuario', style: 'width: 300px; text-align: center;', align: 'left', format: v => this.$formatarValorMoeda(v, 0) }
+        { name: 'tempo_medio_por_usuario', label: 'Tiempo Medio (Min)', field: 'tempo_medio_por_usuario', style: 'width: 300px; text-align: center;', align: 'left', format: v => this.$formatarValorMoeda(v, 0) }
       ],
       pesquisa: {
         startDate: format(sub(new Date(), { days: 30 }), 'yyyy-MM-dd'),
