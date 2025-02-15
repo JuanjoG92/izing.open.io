@@ -1,4 +1,4 @@
-﻿<template>
+<template>
   <div v-if="userProfile === 'admin'">
     <div class="row col q-pa-md justify-between items-center">
       <h1> Panel de Atenciones </h1>
@@ -166,8 +166,8 @@ export default {
       slide: 0,
       height: 400,
       optionsVisao: [
-        { label: 'Por Usuário', value: 'U' },
-        { label: 'Por Usuário (Sintético)', value: 'US' },
+        { label: 'Por Usuario', value: 'U' },
+        { label: 'Por Usuario (Sintético)', value: 'US' },
         { label: 'Por Filas', value: 'F' },
         { label: 'Por Filas (Sintético)', value: 'FS' }
       ],
